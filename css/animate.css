@@ -1,10 +1,11 @@
 /* This only changes this particular animation duration */
-.animate__animated.animate__bounce {
+.animate__bounce {
     --animate-duration: 8s;
+    --animate-delay: 10s;
   }
-  
-  /* This changes all the animations globally */
-  :root {
-    --animate-duration: 800ms;
-    --animate-delay: 0.9s;
+
+  .animate__fadeInLeft {
+    --animation-delay: 3s;
+    --animation-duration: 10s;
+    
   }
