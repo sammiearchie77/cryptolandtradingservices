@@ -16,13 +16,17 @@
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/select2.min.css">
     <link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/skins/orange.css">
+    <link rel="stylesheet" href="css/skins/orange.css">
+    <link rel="stylesheet" href="./css/animate.css">
 	
 	<!-- Live Style Switcher - demo only -->
     <link rel="alternate stylesheet" type="text/css" title="orange" href="css/skins/orange.css" />
     <link rel="alternate stylesheet" type="text/css" title="green" href="css/skins/green.css" />
     <link rel="alternate stylesheet" type="text/css" title="blue" href="css/skins/blue.css" />
     <link rel="stylesheet" type="text/css" href="css/styleswitcher.css" />
+
+    <!-- animation cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <!-- Template JS Files -->
     <script src="js/modernizr.js"></script>
@@ -154,7 +158,7 @@
                         <div class="collapse navbar-collapse navbar-responsive-collapse">
                             <!-- Main Menu Starts -->
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index-2.html">Home</a></li>
+                                <li class="active"><a href="index.html">Home</a></li>
                                 <li><a href="about.html">About Us</a></li>
                                 <li><a href="services.html">Services</a></li>
                                 <li><a href="pricing.html">Pricing</a></li>
@@ -313,13 +317,13 @@
                 <!-- Section Content Starts -->
                 <div class="row about-content">
                     <!-- Image Starts -->
-                    <div class="col-sm-12 col-md-5 col-lg-6 text-center">
+                    <div class="col-sm-12 col-md-5 col-lg-6 text-center animate__animated animate__fadeInRight">
                         <img id="about-us" class="img-responsive img-about-us" src="images/about-us.png" alt="about us">
                     </div>
                     <!-- Image Ends -->
                     <!-- Content Starts -->
-                    <div class="col-sm-12 col-md-7 col-lg-6">
-                        <h3 class="title-about">WE ARE BAYYA</h3>
+                    <div class="col-sm-12 col-md-7 col-lg-6 animate__animated animate__fadeInLeft">
+                        <h3 class="title-about">WE ARE CRYPTOLAND TRADING SERVICES</h3>
                         <p class="about-text">A place for everyone who wants to simply buy and sell Bitcoins. Deposit funds using your Visa/MasterCard or bank transfer. Instant buy/sell of Bitcoins at fair price is guaranteed. Nothing extra. Join over 700,000 users from all over the world satisfied with our services.</p>
                         <ul class="nav nav-tabs">
                             <li class="active"><a data-toggle="tab" href="#menu1">Our Mission</a></li>
@@ -945,7 +949,7 @@
                             <h4>Contact Us </h4>
                             <div class="contacts">
                                 <div>
-                                    <span>contact@website.com</span>
+                                    <span>support@Cryptolandtradingservices.com</span>
                                 </div>
                                 <div>
                                     <span>00216 21 184 010</span>
@@ -1035,8 +1039,12 @@
         <script src="js/custom.js"></script>
 		
 		<!-- Live Style Switcher JS File - only demo -->
-		<script src="js/styleswitcher.js"></script>
-
+        <script src="js/styleswitcher.js"></script>
+        <!-- animation javaScript  -->
+        <script src="js/wow.min.js"></script>
+        <script>
+        new WOW().init();
+        </script
     </div>
     <!-- Wrapper Ends -->
 </body>
