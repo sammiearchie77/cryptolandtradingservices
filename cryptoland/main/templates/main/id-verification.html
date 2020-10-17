@@ -1,0 +1,182 @@
+{% extends "dashboard/dashboard-base.html" %}
+{% block dashboard %}
+{% load widget_tweaks %}
+  
+<div class="wrapper ">
+    {% include "dashboard/sidebar.html" %}
+    <div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <div class="container-fluid">
+                <div class="navbar-wrapper">
+                    <a class="navbar-brand" href="javascript:;">verification</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="navbar-toggler-icon icon-bar"></span>
+        <span class="navbar-toggler-icon icon-bar"></span>
+        <span class="navbar-toggler-icon icon-bar"></span>
+      </button>
+                <div class="collapse navbar-collapse justify-content-end">
+                    <form class="navbar-form">
+                        <div class="input-group no-border">
+                            <input type="text" value="" class="form-control" placeholder="Search...">
+                            <button type="submit" class="btn btn-white btn-round btn-just-icon">
+              <i class="material-icons">search</i>
+              <div class="ripple-container"></div>
+            </button>
+                        </div>
+                    </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:;">
+                                <i class="material-icons">dashboard</i>
+                                <p class="d-lg-none d-md-block">
+                                    Stats
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">notifications</i>
+                                <span class="notification">5</span>
+                                <p class="d-lg-none d-md-block">
+                                    Some Actions
+                                </p>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                                <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                                <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                                <a class="dropdown-item" href="#">Another Notification</a>
+                                <a class="dropdown-item" href="#">Another One</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">person</i>
+                                <p class="d-lg-none d-md-block">
+                                    Account
+                                </p>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
+                                <a class="dropdown-item" href="#">Profile</a>
+                                <a class="dropdown-item" href="#">Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Log out</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header card-header-primary">
+                                <h4 class="card-title">verification</h4>
+                                <p class="card-category">verify your profile</p>
+                            </div>
+                            <div class="card-body">
+                                <!-- verification form  -->
+        <div class="container mb-4">
+            <div class="verification-form-bg">
+                <div id="verify-form-header">
+                    <h3 class="text-center">
+                        Fund and Verify Your Account.
+                    </h3>
+                </div>
+                <div id="verification-form-message">
+                    <p>
+                        Verify Your account by providing us with a vaild document (ID card). Drivers Licence, Valid Work ID Card, Passport, etc are accepted. Please do not try to upload a fake document as our support teams reviews every document uploaded. Detected fake documents will lead to immediate suspension of account! Once Uploaded, Our support team reviews your document and gets back to you within 3 working days. The uploaded documents are for verification purposes only and are deleted once confirmed. You will be notified via email once your document has been verified. Choose your document and click on the verify button.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="exampleFormControlFile"><span>Driver's License, Passport, e.t.c</span></label>
+                            </div>
+                            <div class="form-group">
+                                {{ verification_form.document_type|add_class:"form-control"|attr:"placeholder:Enter Type (e.g Drivers License)" }}
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="front-document">click to upload the front document</label>
+                            </div>
+                            <div class="form-group">
+                              {{ verification_form.front_document|add_class:"form-control-file"|attr:"placeholder:Enter Type (e.g Drivers License)"|attr:"id:front-document"}}
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="back-document">click to upload the back document</label>
+                            </div>
+                            <div class="form-group">
+                                {{ verification_form.back_document|add_class:"form-control-file"|attr:"id:back-document" }}
+                            </div>
+                            
+                            <!-- Button trigger modal -->
+                            <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                submit
+                            </button>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <img src="./static/img/verified.jpeg" class="modal-verification-image">
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- <div id="verification-form">
+                    <form action="" class="form-group" method="POST" enctype="multipart/form-data">
+                        <div class="row"> -->
+                            <!-- document type -->
+                            <!-- <div class="col-lg-3">
+                                <label for="">
+                                    Document Type: <span class="display-5">e.g Driver's License, Passport, e.t.c</span>
+                                </label>
+                            </div>
+                            <div class="col-lg-9">
+                               <input type="text" class="form-control verification-form-main" placeholder="Enter Type (e.g Drivers License)"> 
+                            </div> -->
+
+                            <!-- Document front page -->
+                            <!-- <div class="col-lg-3 mt-2">
+                                <label for="exampleFormControlFile1">
+                                    Front Document</span>
+                                </label>
+                            </div> -->
+                            <!-- <div class="col-lg-9">
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1"> 
+                            </div> -->
+                            <!-- document back page -->
+                            <!-- <div class="col-lg-3 mt-2">
+                                <label for="exampleFormControlFile2">
+                                    Back Document</span>
+                                </label>
+                            </div>
+                            <div class="col-lg-9">
+                               <input type="file" class="form-control-file" id="exampleFormControlFile2">
+                               <button class="btn btn-success btn-block mt-4 flat-button verify-account-button">Verify My Account</button>
+                            </div>
+                        </div>
+                    </form>
+                </div> -->
+            </div>
+        </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock  %}

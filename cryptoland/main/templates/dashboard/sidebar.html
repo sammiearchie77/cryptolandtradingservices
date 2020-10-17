@@ -1,0 +1,47 @@
+{% block sidebar %}
+    <!-- dashboard sidebar -->
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
+        <!--
+    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+
+    Tip 2: you can also add an image using data-image tag
+    -->
+        <div class="logo"><a href="" class="simple-text logo-normal">
+      {{ request.user.profile.first_name }} {{ request.user.profile.last_name }}
+    </a></div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li class="nav-item active  ">
+                    <a class="nav-link" href="{% url 'main:dashboard' %}">
+                        <i class="material-icons">dashboard</i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'main:edit-profile' %}">
+                        <i class="material-icons">person</i>
+                        <p>User Profile</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'main:fund-account' %}">
+                        <i class="material-icons">vertical_align_top</i>
+                        <p>Deposit</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'main:withdraw-funds' %}">
+                        <i class="material-icons">vertical_align_bottom</i>
+                        <p>Withdraw Funds</p>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% url 'main:logout' %}">
+                        <i class="material-icons">exit_to_app</i>
+                        <p>Logout</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

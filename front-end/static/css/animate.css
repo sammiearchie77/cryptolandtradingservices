@@ -1,0 +1,11 @@
+/* This only changes this particular animation duration */
+.animate__bounce {
+    --animate-duration: 8s;
+    --animate-delay: 10s;
+  }
+
+  .animate__fadeInLeft {
+    --animation-delay: 3s;
+    --animation-duration: 10s;
+    
+  }
