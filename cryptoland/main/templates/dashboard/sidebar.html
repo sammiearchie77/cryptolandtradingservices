@@ -1,47 +1,73 @@
 {% block sidebar %}
-    <!-- dashboard sidebar -->
-    <div class="sidebar" data-color="purple" data-background-color="white" data-image="../assets/img/sidebar-1.jpg">
-        <!--
-    Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
+   <!-- Left side column. contains the logo and sidebar -->
+   <aside class="main-sidebar">
+    <!-- sidebar-->
+    <section class="sidebar">
 
-    Tip 2: you can also add an image using data-image tag
-    -->
-        <div class="logo"><a href="" class="simple-text logo-normal">
-      {{ request.user.profile.first_name }} {{ request.user.profile.last_name }}
-    </a></div>
-        <div class="sidebar-wrapper">
-            <ul class="nav">
-                <li class="nav-item active  ">
-                    <a class="nav-link" href="{% url 'main:dashboard' %}">
-                        <i class="material-icons">dashboard</i>
-                        <p>Dashboard</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{% url 'main:edit-profile' %}">
-                        <i class="material-icons">person</i>
-                        <p>User Profile</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{% url 'main:fund-account' %}">
-                        <i class="material-icons">vertical_align_top</i>
-                        <p>Deposit</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{% url 'main:withdraw-funds' %}">
-                        <i class="material-icons">vertical_align_bottom</i>
-                        <p>Withdraw Funds</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="{% url 'main:logout' %}">
-                        <i class="material-icons">exit_to_app</i>
-                        <p>Logout</p>
-                    </a>
-                </li>
-            </ul>
+        <div class="user-profile">
+            <div class="ulogo">
+                <a href="index.html">
+                    <!-- logo for regular state and mobile devices -->
+                    <h3></h3>
+                </a>
+            </div>
+            <div class="profile-pic">
+                <img src="{{ request.user.profile.profile_picture }}" alt="user">
+                <div class="profile-info">
+                    <h5 class="mt-15">John Doe</h5>
+                    <div class="text-center d-inline-block">
+                        <a href="#" class="link" data-toggle="tooltip" title="" data-original-title="Settings"><i class="ion ion-gear-b"></i></a>
+                        <a href="#" class="link px-15" data-toggle="tooltip" title="" data-original-title="Email"><i class="ion ion-android-mail"></i></a>
+                        <a href="#" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ion ion-power"></i></a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+
+        <!-- sidebar menu-->
+        <ul class="sidebar-menu" data-widget="tree">
+
+            <li class="header nav-small-cap">PERSONAL</li>
+             
+            <li>
+                <a href="{% url 'main:dashboard' %}">
+                    <i class="ti-cup"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'main:fund-account' %}">
+                    <i class="ti-arrow-down"></i>
+                    <span>Deposit</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'main:withdraw-funds' %}">
+                    <i class="ti-arrow-up"></i>
+                    <span>Withdraw</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'main:transactions' %}">
+                    <i class="ti-calendar"></i>
+                    <span>Transaction / Trading History</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'main:edit-profile' %}">
+                    <i class="ti-user"></i>
+                    <span>Update Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'main:logout' %}">
+                    <i class="ti-power-off"></i>
+                    <span>Log Out</span>
+                </a>
+            </li>
+
+        </ul>
+    </section>
+</aside>
+
 {% endblock %}

@@ -4,13 +4,17 @@ from django.urls import path
 home, privacy policy, Payment Policy views
 '''
 
-from .views import index, logout_view,contact, about, register,terms_and_condition, privacy_policy, safety_of_funds
+from .views import index,faq, logout_view,contact, about, register,terms_and_condition, privacy_policy, safety_of_funds
 
 # dashboard routes
-from .views import dashboard, id_verification, account_upgrade, create_profile,edit_profile, fund_account, trading_history, withdraw_funds
+from .views import dashboard, id_verification, account_upgrade, create_profile,edit_profile, fund_account, transactions, withdraw_funds
 
 # validation routes
 from .views import validate_login, validate_registration
+
+# settings 
+from django.conf import settings 
+from django.conf.urls.static import static
 
 app_name = 'main'
 
@@ -24,10 +28,12 @@ urlpatterns = [
     path('terms-and-conditions/', terms_and_condition, name='terms-and-conditions'),
     path('privacy-policy', privacy_policy, name='privacy-policy'),
     path('safety-of-funds', safety_of_funds, name='safety-of-funds'),
+    # frequently asked questions 
+    path('faq/', faq ,name='faq'),
     # dashboard routes
     path('dashboard/', dashboard, name="dashboard"),
     path('fund-account/', fund_account, name='fund-account'), 
-    path('trading-history/', trading_history, name='trading-history'),
+    path('transactions/', transactions, name='transactions'),
     path('withdraw-funds/', withdraw_funds, name='withdraw-funds'),
     path('id-verification/', id_verification, name='id-verification'), 
     path('logout/', logout_view, name='logout'),
@@ -42,3 +48,15 @@ urlpatterns = [
     path('validate/register', validate_registration, name='validate-registration')
     
 ]
+urlpatterns += static(
+        settings.STATIC_URL, 
+        document_root=settings.STATIC_ROOT
+    )
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# if settings.DEBUG:
+#     urlpatterns += static(
+#         settings.MEDIA_URL, 
+#         document_root=settings.MEDIA_ROOT
+#     )

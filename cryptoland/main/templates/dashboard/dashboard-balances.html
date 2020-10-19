@@ -1,0 +1,55 @@
+{% block dashboard-banner %}
+<div class="row">
+    <div class="col-lg-4">
+        <div class="box">
+            <div class="box-body box-inverse bg-info p-0">	
+            <div class="box-header no-border">
+                <h4>Balance</h4>
+            </div>
+            <div class="box-body p-10">
+                {% if balance.amount %}
+                <h1 class="text-center"><small>$</small>{{ balance.amount }}</h1>
+                {% else %}
+                <h1 class="text-center"><small>$</small>0</h1>
+                {% endif %}
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="box">
+            <div class="box-body box-inverse bg-info p-0">	
+            <div class="box-header no-border">
+                <h4>Total Invested</h4>
+            </div>
+            <div class="box-body p-10">
+                {% if invested.amount %}
+                <h1 class="text-center"><small>$</small>{{ invested.amount }}</h1>
+                {% else %}
+                <h1 class="text-center"><small>$</small>0</h1>
+                {% endif %}
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="box">
+            <div class="box-body box-inverse bg-error p-0">	
+            <div class="box-header no-border">
+                <h4>Available Withdrawal</h4>
+            </div>
+            <div class="box-body p-10">
+                {% if withdraw.amount %}
+                <h1 class="text-center"><small>$</small>{{ withdraw.amount }}</h1>
+                {% else %}
+                <h1 class="text-center"><small>$</small>0</h1>
+                {% endif %}
+            </div>
+        </div>
+        
+    </div>
+    
+</div>  
+</div>
+{% endblock  %}

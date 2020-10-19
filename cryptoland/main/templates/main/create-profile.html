@@ -1,0 +1,170 @@
+﻿{% extends "dashboard/dashboard-base.html" %}
+{% load widget_tweaks %}
+{% block dashboard %}
+<div class="wrapper">
+
+    <header class="main-header">
+        <!-- Logo -->
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <div>
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <i class="ti-align-left"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    {% include "dashboard/sidebar.html" %}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <div class="container-full">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <h3>
+                    Dashboard
+                    <small>Control panel</small>
+                </h3>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </div>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="box box-inverse box-dark">
+                            <!-- TradingView Widget BEGIN -->
+                            <div class="tradingview-widget-container">
+                                <div class="tradingview-widget-container__widget"></div>
+                                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                                    {
+                                        "symbols": [{
+                                            "proName": "FOREXCOM:SPXUSD",
+                                            "title": "S&P 500"
+                                        }, {
+                                            "proName": "FOREXCOM:NSXUSD",
+                                            "title": "Nasdaq 100"
+                                        }, {
+                                            "proName": "FX_IDC:EURUSD",
+                                            "title": "EUR/USD"
+                                        }, {
+                                            "proName": "BITSTAMP:BTCUSD",
+                                            "title": "BTC/USD"
+                                        }, {
+                                            "proName": "BITSTAMP:ETHUSD",
+                                            "title": "ETH/USD"
+                                        }],
+                                        "colorTheme": "light",
+                                        "isTransparent": false,
+                                        "displayMode": "regular",
+                                        "locale": "en"
+                                    }
+                                </script>
+                            </div>
+                            <!-- TradingView Widget END -->
+                        </div>
+                    </div>
+                </div>
+                    {% include "dashboard/dashboard-balances.html" %}
+                <!-- withdrawal form -->
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="box-body wizard-content">
+                                <form method="POST" enctype="multipart/form-data">
+                                    <!-- Step 1 -->
+                                    <h4>Client Information</h4>
+                                    <p>
+                                        Fill in the form to Create your profile bio data to get started
+                                    </p>
+                                    <section>
+                                        <div class="row">
+                                            {% csrf_token %}
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="firstName5">First Name :</label>
+                                                    {{ form.first_name|add_class:"form-control"|attr:'placeholder:First Name'}}
+                                                </div> 
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="lastName1">Last Name :</label>
+                                                    {{ form.last_name|add_class:"form-control"|attr:'placeholder:Last Name'}}
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="emailAddress1">Phone Number :</label>
+                                                    {{ form.phone_number|add_class:"form-control"|attr:'placeholder:E.g + 1'}}
+                                            </div>
+                                                    
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="phoneNumber1">Street Address :</label>
+                                                    {{ form.street_address|add_class:"form-control"|attr:'placeholder:Street Address'}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="addressline1">City :</label>
+                                                    {{ form.city|add_class:"form-control"|attr:'placeholder:City'}}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="addressline2">Street Address :</label>
+                                                    {{ form.street_address|add_class:"form-control"|attr:'placeholder:Street'}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="location3">Zip Code :</label>
+                                                    {{ form.postal_or_zip_code|add_class:"form-control"|attr:'placeholder:Postal/Zip Code'}}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="location3">Zip Code :</label>
+                                                    {{ form.country|add_class:"form-control"|attr:'placeholder:Country'}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Select a Plan</label>
+                                                    {{ form.select_plan|add_class:"form-control"|attr:'placeholder: Select a Plan'}}
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="">Select a Picture</label>
+                                                    {{ form.profile_picture|add_class:"form-control"|attr:'placeholder: Select a Plan'}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-success">Create Profile</button>
+                                    </section>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+
+{% endblock  %}

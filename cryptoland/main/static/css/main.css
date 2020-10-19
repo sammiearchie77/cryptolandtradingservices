@@ -1,0 +1,825 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: 'Lato'; */
+    letter-spacing: .2px;
+    width: 100%;
+}
+
+h2 {
+    /* font-family: "exo 2"; */
+    letter-spacing: .2px;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+h3 {
+    /* font-family: "exo 2"; */
+    color: #282835;
+    letter-spacing: .2px;
+    font-weight: 700;
+}
+
+.text-center {
+    padding: 10px;
+}
+
+.nav-link {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    font-size: 25px;
+    text-shadow: 2px 4px rgba(255, 255, 255, .25);
+}
+
+a:link {
+    text-decoration: none !important;
+}
+
+
+/* content body  */
+
+.middle-text {
+    margin-bottom: 30px;
+}
+
+.middle-text>h2 {
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: #333;
+}
+
+.middle-text>p {
+    /* font-family: Lato; */
+    color: #585e68;
+    padding: 0;
+}
+
+.middle-text-img,
+.fifth-content-img,
+.seventh-content-img {
+    position: relative;
+    margin-left: 20%;
+    left: 27%;
+    top: 10px;
+    margin-bottom: 20px;
+}
+
+span {
+    text-align: center;
+}
+
+.svg {
+    margin-left: 180px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.row-text {
+    /* font-family: Lato; */
+    color: #585e68;
+    line-height: 26px;
+    font-size: 15px;
+    letter-spacing: .2px;
+}
+
+
+/* first content  */
+
+.second-content-bg {
+    background-image: url('../img/city2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    background-attachment: fixed;
+    box-shadow: 0 3000px rgba(0, 0, 0, 0.5) inset;
+}
+
+.second-content-heading {
+    position: relative;
+    top: 111px;
+}
+
+.second-content-msg {
+    margin-bottom: 100px;
+}
+
+
+/* third content  */
+
+.third-content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.content-button {
+    margin-left: 86px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.btn-learn {
+    border-radius: 25px;
+    padding: 10px 40px;
+    border-color: #ffb506;
+    font-size: 15px;
+}
+
+.btn-learn:hover {
+    background-color: transparent;
+    border: 3px solid #ffb506;
+    color: #ffb506;
+}
+
+.btn-reg {
+    border-radius: 25px;
+    padding: 10px 40px;
+    background-color: #00002A;
+    color: #fff;
+    font-size: 15px;
+}
+
+.btn-reg:hover {
+    background-color: transparent;
+    border: 3px solid #00002A;
+    color: #00002A;
+}
+
+
+/* forth-section  */
+
+
+/* .forth-section {
+    background-image: url('../img/pexels-karolina-grabowska-4386375.jpg');
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    box-shadow: 0 3000px rgba(0,0,0, 0.5) inset;
+} */
+
+.forth-img {
+    margin-left: 100px;
+}
+
+.forth-section-header {
+    position: relative;
+    top: 20px;
+    margin-left: 511px;
+}
+
+.forth-section-msg {
+    position: relative;
+    margin-right: 92px;
+    margin-top: 40px;
+    font-size: 25px;
+}
+
+.forth-section-bg {
+    background-image: url('../img/city1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    background-attachment: fixed;
+    width: 100%;
+    box-shadow: 0 3000px rgba(0, 0, 0, 0.5) inset;
+}
+
+
+/* fifth content  */
+
+.fifth-content {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.fifth-content-header {
+    margin-bottom: 10px;
+    font-size: 40px;
+    color: #333;
+}
+
+.fifth-content-msg {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+/* sixth-content  */
+
+.sixth-content-bg {
+    background-image: url('../img/trading.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+    background-attachment: fixed;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    box-shadow: 0 3000px rgba(0, 0, 0, 0.5) inset;
+}
+
+.sixth-content-widget {
+    position: absolute;
+    margin-left: 100px;
+    margin-top: -65px;
+}
+
+h2.seventh-content-header.text-center {
+    margin-top: -20px;
+}
+
+.seventh-content-widget {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+
+/* google map section  */
+
+#google-map-content {
+    height: 500px;
+    background-color: #808080;
+    width: 100%;
+}
+
+
+/* ninth-content-section */
+
+.ninth-content {
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+
+/* footer-content  */
+
+.footer-content {
+    background-image: url('../img/footer.jpg');
+    min-height: 300px;
+    margin-top: 30px;
+}
+
+
+/* + registration page styling +  */
+
+.bg-image {
+    background-image: url('../img/pexels-david-mcbee-730547.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500px;
+    width: 100%;
+}
+
+.bg-image-header {
+    position: absolute;
+    margin-top: 85px;
+    margin-left: 264px;
+    text-shadow: 4px 4px rgba(255, 255, 255, 0.905);
+}
+
+
+/* + form section styling for registration page +  */
+
+.form-form {
+    position: relative;
+    margin-top: 40px;
+    color: #fff !important;
+    margin-bottom: 40px;
+}
+
+.form-row {
+    background-image: url('../img/pexels-crypto-crow-1447418.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    box-shadow: 0 3000px rgba(0, 0, 0, 0.5) inset;
+}
+
+
+/* + login section styling + */
+
+.login-body {
+    background-image: url('../img/login-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    height: 600px;
+    width: 100%;
+    box-shadow: 0 3000px rgba(0, 0, 0, 0.5) inset;
+}
+
+.login-form {
+    margin-top: 80px;
+}
+
+.reg-footer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    /* background-color: #bfbfbf; */
+}
+
+
+/* about section  */
+
+.about-bg {
+    background-image: url('../img/about-bg.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 350px;
+    box-shadow: 0 3000px rgba(0, 0, 0, 0.5) inset;
+}
+
+.about-section-image {
+    background-image: url('../img/about-section.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 700px;
+    border-radius: 10px;
+    position: relative;
+    right: 20px;
+}
+
+
+/* middle content styling  */
+
+.middle-content-bg {
+    background-image: url('../img/parallax1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500px;
+    z-index: -2;
+    box-shadow: 0 3000px rgba(0, 0, 0, 0.5) inset;
+}
+
+.middle-content-text {
+    position: relative;
+    top: 50px;
+}
+
+.middle-content-p {
+    font-weight: 900;
+}
+
+
+/* third content styling  */
+
+.third-content-heading {
+    font-weight: 900;
+    position: relative;
+    top: 60px;
+}
+
+.about-third-content-bg {
+    background-image: url('../img/parallax6.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500px;
+    box-shadow: 0 3000px rgba(0, 0, 0, 0.5) inset;
+}
+
+.about-img {
+    position: relative;
+    margin-left: 34%;
+    left: 14%;
+    margin-bottom: 2%
+}
+
+.about-svg {
+    position: relative;
+    left: 39%;
+}
+
+.about-third-content-btn {
+    border-radius: 25px;
+    padding: 20px 35px;
+    border-color: #ffb506;
+    font-size: 15px;
+    margin-left: 600px;
+    margin-top: 90px;
+    position: relative;
+    top: 50px;
+    font-size: 20px;
+}
+
+.about-third-content-btn:hover {
+    background-color: transparent;
+    border: 3px solid #ffb506;
+    color: #ffb506;
+}
+
+.global {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+}
+
+.global-heading {
+    margin-left: 40px;
+    margin-top: 40px;
+    margin-bottom: 0;
+    line-height: 34px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.global-section {
+    float: left;
+    line-height: 80px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    padding: 0 30px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+
+/* about .fifth-content section  */
+
+.about-fifth-content {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 400px;
+}
+
+.about-fifth-content-heading {
+    position: relative;
+    top: 40px;
+    font-family: 'Lato';
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.about-support {
+    background-color: #00002A;
+    position: relative;
+    top: 60px;
+}
+
+
+/* contact us section  */
+
+.contact-body {
+    background-image: url('../img/parallax1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 1000px;
+    background-attachment: fixed;
+}
+
+.contact-head {
+    background-image: url('../img/about-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+}
+
+.contact-text {
+    font-size: 23px;
+    font-weight: 500;
+    text-shadow: 2px 2px #282835;
+    text-align: justify;
+}
+
+.col-form-label {
+    font-weight: 700;
+    text-shadow: 2px 2px #333;
+}
+
+.contact-button {
+    position: relative;
+    top: 20px;
+    bottom: 20px;
+    padding: 10px 20px;
+}
+
+.contact-button:hover {
+    background-color: transparent;
+    color: #fff;
+    border: 3px solid;
+}
+
+.form-form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.empty-section {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.tradingview-widget-container {
+    height: 500px;
+}
+
+
+/* trade-data section  */
+
+.trade-data-text-img {
+    margin-left: 30%;
+    margin-top: 8%;
+    position: relative;
+    left: 18%;
+}
+
+.trade-data-svg {
+    margin-left: 20%;
+    position: relative;
+    left: 20%;
+}
+
+
+/* footer styling section  */
+
+.footer-msg {
+    position: relative;
+    top: 75px;
+}
+
+.footer-links-content {
+    position: relative;
+    top: 52px;
+}
+
+.footer-link {
+    position: relative;
+    top: 80px;
+}
+
+.subscribe-div {
+    position: relative;
+    top: 40px;
+}
+
+.subscribe-msg {
+    margin-left: 20px;
+    position: relative;
+    bottom: 10px;
+    font-size: 19px;
+}
+
+.subscribe-input-div {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.subscribe-input {
+    height: 51px;
+    border-radius: 30px;
+}
+
+.footer-btn {
+    margin-left: 22px;
+    margin-top: 15px;
+    height: 50px;
+    border-radius: 30px;
+    width: 195px;
+}
+
+.footer-btn:hover {
+    background-color: transparent;
+    color: #ffb506;
+    border: 3px solid #ffb506;
+}
+
+
+/* margin information  file*/
+
+.margin-content,
+.term-content,
+.privacy-content {
+    padding: 0px 80px;
+    color: #808080;
+}
+
+
+/* company information  */
+
+.company-content {
+    margin-left: 80px;
+    margin-top: 60px;
+}
+
+
+/* mobile mode section  */
+
+@media only screen and (max-width: 600px) {
+    /* Home page mobile styling  */
+    .middle-text>h2 {
+        font-size: 20px;
+    }
+    .middle-text>p {
+        font-size: 14px;
+    }
+    .col-lg-4>h4 {
+        font-size: 22px;
+    }
+    /* third-content  */
+    .third-content-img {
+        width: 100%;
+    }
+    /* forth-content-bg  */
+    .forth-section-bg {
+        width: 100%;
+    }
+    .forth-img {
+        display: none;
+    }
+    .content-button {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        flex-shrink: 1;
+        margin-left: 10px;
+        margin-top: 20px;
+        margin-bottom: 27px;
+    }
+    .content-button>div {
+        padding: 0 !important;
+    }
+    .btn-reg {
+        padding: 7px 25px;
+    }
+    .btn-learn {
+        padding: 7px 20px;
+    }
+    .middle-text-img,
+    .fifth-content-img,
+    .seventh-content-img {
+        position: relative;
+        margin-left: 18%;
+        left: 20%;
+        top: 10px;
+        margin-bottom: 20px;
+    }
+    .svg {
+        margin-left: 120px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .second-content-bg {
+        background-attachment: scroll;
+        min-height: 233px
+    }
+    .second-content-heading {
+        font-size: 20px;
+        position: relative;
+        top: 70px;
+    }
+    .third-content {
+        margin: 0;
+    }
+    .col-lg-5>h2 {
+        font-size: 22px;
+    }
+    .col-lg-5>p {
+        font-size: 14px;
+    }
+    .forth-section-bg {
+        background-attachment: scroll;
+    }
+    .forth-section-header {
+        font-size: 20px;
+        margin: 0;
+    }
+    .forth-section-bg {
+        background-image: url(../img/city1.jpg);
+        background-attachment: scroll;
+        width: 100%;
+        position: relative;
+        top: 20px;
+        box-shadow: 0 3000px rgba(0, 0, 0, 0.5) inset;
+        min-height: 0px;
+    }
+    .forth-section-msg {
+        margin-top: 10px;
+        font-size: 15px;
+        margin-right: 0;
+    }
+    .about-fourth-content {
+        display: none;
+    }
+    .fifth-content-header {
+        font-size: 37px;
+    }
+    .fifth-content-msg {
+        font-weight: 500;
+        font-size: 17px;
+    }
+    .sixth-content-bg {
+        background-attachment: scroll;
+    }
+    .sixth-content {
+        display: none;
+    }
+    .seventh-section {
+        display: none;
+    }
+    .fifth-content-header {
+        margin-bottom: 10px;
+        font-size: 37px;
+        color: #333;
+    }
+    .eight-content {
+        display: none;
+    }
+    .global-section {
+        border: 1px solid rgba(0, 0, 0, .2);
+        padding: 25px 108px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+    .subscribe-msg {
+        font-size: 14px;
+        padding: 0;
+        margin: 0;
+    }
+    .subscribe-input {
+        height: 40px;
+        border-radius: 30px;
+        position: relative;
+        right: 20px;
+        bottom: 15px;
+    }
+    .copy-right>h3 {
+        font-size: 14px;
+    }
+    .footer-btn {
+        width: 110px;
+        height: 40px;
+        font-size: 13px;
+        position: relative;
+        margin: 0;
+        bottom: 15px;
+    }
+    .footer-msg {
+        position: relative;
+        top: 54px;
+    }
+    .footer-links-content {
+        position: relative;
+        top: 47px;
+    }
+    .footer-links-content>h3 {
+        text-align: center;
+    }
+    .footer-link {
+        position: relative;
+        top: 38px;
+    }
+    .subscribe-div {
+        position: relative;
+        top: 17px;
+        right: 10px;
+    }
+    #google-map-content {
+        max-width: 320px;
+    }
+    .about-img {
+        position: relative;
+        margin-left: 25%;
+        left: 14%;
+        margin-bottom: 2%;
+    }
+    .middle-content-bg {
+        background-attachment: scroll;
+    }
+    .about-third-content-bg {
+        background-attachment: scroll;
+    }
+}
+
+
+/* dashboard */
+
+.markets {
+    height: 400px;
+}
+
+.single-bitcoin-chart {
+    height: 250px;
+}
+
+/* homepage logo */
+#logo {
+    width: 25%;
+}

@@ -57,7 +57,9 @@ def contact(request):
         'form': form
     }
     return render(request, 'main/contact.html', context)
-
+# frequently asked questions
+def faq(request):
+    return render(request, 'main/faq.html')    
 # Privacy Policy
 def privacy_policy(request):
     return render(request, 'main/privacy-policy.html')
@@ -150,7 +152,7 @@ def fund_account(request):
     return render(request, 'main/fund-account.html', context)
 
 # transactions view 
-def trading_history(request):
+def transactions(request):
     return render(request, 'main/trading-history.html')
 
 # withdrawal fn
@@ -267,7 +269,7 @@ def create_profile(request):
     # POST request form logic
     if request.method == 'POST':
         # request user instance
-        form = ProfileForm(request.POST,instance=request.user, files=request.FILES)
+        form = ProfileForm(request.POST,request.FILES,instance=request.user, )
         if form.is_valid():
             # gather profile form data
             first_name = form.cleaned_data.get('first_name')
@@ -286,6 +288,7 @@ def create_profile(request):
             user = request.user
             # filter by UUID and match the user that has been created from the registration
             profile_user = Profile.objects.filter(user_id=user.user_id)
+            print(profile_picture)
 
             # update the users profile with the required form data
             profile_user.update(

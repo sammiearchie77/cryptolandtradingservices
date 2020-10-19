@@ -1,0 +1,423 @@
+﻿{% extends "dashboard/dashboard-base.html" %}
+{% block dashboard %}
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <div>
+                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                        <i class="ti-align-left"></i>
+                    </a>
+                </div>
+            </nav>
+        </header>
+{% include "dashboard/sidebar.html" %}
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <div class="container-full">
+                <!-- Content Header (Page header) -->
+                <div class="content-header">
+                    <h3>
+                        Dashboard
+                        <small>Control panel</small>
+                    </h3>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </div>
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="box box-inverse box-dark">
+                                <!-- TradingView Widget BEGIN -->
+                                <div class="tradingview-widget-container">
+                                    <div class="tradingview-widget-container__widget"></div>
+                                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                                        {
+                                            "symbols": [{
+                                                "proName": "FOREXCOM:SPXUSD",
+                                                "title": "S&P 500"
+                                            }, {
+                                                "proName": "FOREXCOM:NSXUSD",
+                                                "title": "Nasdaq 100"
+                                            }, {
+                                                "proName": "FX_IDC:EURUSD",
+                                                "title": "EUR/USD"
+                                            }, {
+                                                "proName": "BITSTAMP:BTCUSD",
+                                                "title": "BTC/USD"
+                                            }, {
+                                                "proName": "BITSTAMP:ETHUSD",
+                                                "title": "ETH/USD"
+                                            }],
+                                            "colorTheme": "light",
+                                            "isTransparent": false,
+                                            "displayMode": "regular",
+                                            "locale": "en"
+                                        }
+                                    </script>
+                                </div>
+                                <!-- TradingView Widget END -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="box">
+                                <div class="box-body box-inverse bg-info p-0">
+                                    <div class="box-header no-border">
+                                        <h4>Balance</h4>
+                                    </div>
+                                    <div class="box-body p-10">
+                                        <h1 class="text-center"><small>$</small>4, 0100</h1>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="box">
+                                <div class="box-body box-inverse bg-info p-0">
+                                    <div class="box-header no-border">
+                                        <h4>Total Invested</h4>
+                                    </div>
+                                    <div class="box-body p-10">
+                                        <h1 class="text-center"><small>$</small>84,125,859</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="box">
+                                <div class="box-body box-inverse bg-error p-0">
+                                    <div class="box-header no-border">
+                                        <h4>Available Withdrawal</h4>
+                                    </div>
+                                    <div class="box-body p-10">
+                                        <h1 class="text-center"><small>$</small>84,125,859</h1>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- withdrawal form -->
+                    <div class="row">
+                        <section class="content">
+                            <div class="row">
+                              <div class="col-lg-6 col-12">
+                                  <div class="box">
+                                    <div class="box-header with-border">
+                                      <h4 class="box-title">Latest Transactions</h4>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="table-responsive">
+                                            <table class="table no-margin table-hover">
+                                              <thead>					
+                                                <tr class="bg-dark">
+                                                  <th class="text-warning">Transaction Hash</th>
+                                                  <th class="text-warning">BTC</th>
+                                                  <th class="text-warning">Time</th>
+                                                  <th class="text-warning">Miner Preference</th>
+                                                  <th class="text-warning">Status</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">
+                                                      7d2c7b06afa0
+                                                    </a>
+                                                    ...
+                                                  </td>
+                                                  <td>1.0126281 BTC</td>
+                                                  <td>
+                                                    <time class="timeago" datetime="2018-02-01T13:38:01Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
+                                                  </td>
+                                                  <td>medium</td>
+                                                  <td><span class="label label-success">Confirmed</span></td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">
+                                                      5de67405bfc6
+                                                    </a>
+                                                    ...
+                                                  </td>
+                                                  <td>0.10522881 BTC</td>
+                                                  <td>
+                                                    <time class="timeago" datetime="2018-02-01T13:38:01Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
+                                                  </td>
+                                                  <td>high</td>
+                                                  <td><span class="label label-warning">Unconfirmed</span></td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">
+                                                      583de1b0cec
+                                                    </a>
+                                                    ...
+                                                  </td>
+                                                  <td>0.40622033 BTC</td>
+                                                  <td>
+                                                    <time class="timeago" datetime="2018-02-01T13:38:01Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
+                                                  </td>
+                                                  <td>high</td>
+                                                  <td><span class="label label-success">Confirmed</span></td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">
+                                                      5493bcfa5f7f
+                                                    </a>
+                                                    ...
+                                                  </td>
+                                                  <td>4.43670578 BTC</td>
+                                                  <td>
+                                                    <time class="timeago" datetime="2018-02-01T13:38:00Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
+                                                  </td>
+                                                  <td>high</td>
+                                                  <td><span class="label label-danger">Canceled</span></td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">
+                                                      4d66087926b5
+                                                    </a>
+                                                    ...
+                                                  </td>
+                                                  <td>22.01099978 BTC</td>
+                                                  <td>
+                                                    <time class="timeago" datetime="2018-02-01T13:38:00Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
+                                                  </td>
+                                                  <td>high</td>
+                                                  <td><span class="label label-danger">Canceled</span></td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">
+                                                      60935e53c894
+                                                    </a>
+                                                    ...
+                                                  </td>
+                                                  <td>0.0024534 BTC</td>
+                                                  <td>
+                                                    <time class="timeago" datetime="2018-02-01T13:38:00Z" title="2018-02-01 13:38 GMT">2 minutes ago</time>
+                                                  </td>
+                                                  <td>high</td>
+                                                  <td><span class="label label-warning">Unconfirmed</span></td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">
+                                                      b1236b76cf5e
+                                                    </a>
+                                                    ...
+                                                  </td>
+                                                  <td>0.00518486 BTC</td>
+                                                  <td>
+                                                    <time class="timeago" datetime="2018-02-01T13:37:59Z" title="2018-02-01 13:37 GMT">2 minutes ago</time>
+                                                  </td>
+                                                  <td>medium</td>
+                                                  <td><span class="label label-success">Confirmed</span></td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">
+                                                      d0125cb78c078
+                                                    </a>
+                                                    ...
+                                                  </td>
+                                                  <td>0.08039395 BTC</td>
+                
+                                                  <td>
+                                                    <time class="timeago" datetime="2018-02-01T13:37:59Z" title="2018-02-01 13:37 GMT">2 minutes ago</time>
+                                                  </td>
+                                                  <td>high</td>
+                                                  <td><span class="label label-success">Confirmed</span></td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">
+                                                      b6b591254835c
+                                                    </a>
+                                                    ...
+                                                  </td>
+                                                  <td>55.99698306 BTC</td>
+                                                  <td>
+                                                    <time class="timeago" datetime="2018-02-01T13:37:58Z" title="2018-02-01 13:37 GMT">2 minutes ago</time>
+                                                  </td>
+                                                  <td>high</td>
+                                                  <td><span class="label label-success">Confirmed</span></td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">
+                                                      d261fb1d717d
+                                                    </a>
+                                                    ...
+                                                  </td>
+                                                  <td>0.0281818 BTC</td>
+                                                  <td>
+                                                    <time class="timeago" datetime="2018-02-01T13:37:58Z" title="2018-02-01 13:37 GMT">2 minutes ago</time>
+                                                  </td>
+                                                  <td>high</td>
+                                                  <td><span class="label label-danger">Canceled</span></td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="col-lg-6 col-12">
+                                  <div class="box box-inverse box-dark">
+                                    <div class="box-header with-border">
+                                      <h4 class="box-title">Recent Transactions</h4>
+                                    </div>
+                                    <div class="box-body">
+                                        <div class="table-responsive">
+                                            <table class="table no-margin no-border bg-dark">
+                                              <thead>
+                                                <tr class="bg-warning">
+                                                  <th>Id</th>
+                                                  <th>Time</th>
+                                                  <th>Transactions</th>
+                                                  <th>Sent</th>
+                                                  <th>Fees</th>
+                                                  <th>Block Size</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">145236</a>
+                                                  </td>
+                                                  <td>59&nbsp;seconds ago</td>
+                                                  <td>2,122</td>
+                                                  <td>16,819.638 BTC</td>
+                                                  <td>1.796 BTC</td>
+                                                  <td>546,573</td>
+                                                </tr>
+                
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">145237</a>
+                                                  </td>
+                                                  <td>10&nbsp;minutes ago</td>
+                                                  <td>1,807</td>
+                                                  <td>6,410.154 BTC</td>
+                                                  <td>0.982 BTC</td>
+                                                  <td>458,027</td>
+                                                </tr>
+                
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">145238</a>
+                                                  </td>
+                                                  <td>13&nbsp;minutes ago</td>
+                                                  <td>1,980</td>
+                                                  <td>16,541.708 BTC</td>
+                                                  <td>1.855 BTC</td>
+                                                  <td>458,440</td>
+                                                </tr>
+                
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">145239</a>
+                                                  </td>
+                                                  <td>21&nbsp;minutes ago</td>
+                                                  <td>1,781</td>
+                                                  <td>12,009.855 BTC</td>
+                                                  <td>1.963 BTC</td>
+                                                  <td>515,484</td>
+                                                </tr>
+                
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">145239</a>
+                                                  </td>
+                                                  <td>21&nbsp;minutes ago</td>
+                                                  <td>1,781</td>
+                                                  <td>12,009.855 BTC</td>
+                                                  <td>1.963 BTC</td>
+                                                  <td>515,484</td>
+                                                </tr>
+                
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">145240</a>
+                                                  </td>
+                                                  <td>31&nbsp;minutes ago</td>
+                                                  <td>1,590</td>
+                                                  <td>8,166.284 BTC</td>
+                                                  <td>1.923 BTC</td>
+                                                  <td>125,979</td>
+                                                </tr>
+                
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">145236</a>
+                                                  </td>
+                                                  <td>59&nbsp;seconds ago</td>
+                                                  <td>2,122</td>
+                                                  <td>16,819.638 BTC</td>
+                                                  <td>1.796 BTC</td>
+                                                  <td>546,573</td>
+                                                </tr>
+                
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">145237</a>
+                                                  </td>
+                                                  <td>10&nbsp;minutes ago</td>
+                                                  <td>1,807</td>
+                                                  <td>6,410.154 BTC</td>
+                                                  <td>0.982 BTC</td>
+                                                  <td>458,027</td>
+                                                </tr>
+                
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">145238</a>
+                                                  </td>
+                                                  <td>13&nbsp;minutes ago</td>
+                                                  <td>1,980</td>
+                                                  <td>16,541.708 BTC</td>
+                                                  <td>1.855 BTC</td>
+                                                  <td>458,440</td>
+                                                </tr>
+                
+                                                <tr>
+                                                  <td>
+                                                    <a href="#" class="text-warning hover-warning">145239</a>
+                                                  </td>
+                                                  <td>21&nbsp;minutes ago</td>
+                                                  <td>1,781</td>
+                                                  <td>12,009.855 BTC</td>
+                                                  <td>1.963 BTC</td>
+                                                  <td>515,484</td>
+                                                </tr>
+                
+                                              </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                  </div>	
+                              </div>
+                          </div>
+                        </section>
+                        <!-- /.content -->
+                    </div>
+
+{% endblock %}

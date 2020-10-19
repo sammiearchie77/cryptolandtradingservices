@@ -11,13 +11,13 @@
     <link rel="shortcut icon" href="images/favicon.png">
 
     <!-- Template CSS Files -->
-    <link rel="stylesheet" href="../../static/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../static/css/magnific-popup.css">
-    <link rel="stylesheet" href="../../static/css/select2.min.css">
-    <link rel="stylesheet" href="../../static/css/style.css">
-    <link rel="stylesheet" href="../../static/css/skins/orange.css">
-    <link rel="stylesheet" href="../../static/css/animate.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/magnific-popup.css">
+    <link rel="stylesheet" href="/static/css/select2.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/skins/orange.css">
+    <link rel="stylesheet" href="/static/css/animate.css">
 
     <!-- Live Style Switcher - demo only -->
     <link rel="alternate stylesheet" type="text/css" title="orange" href="./static/css/skins/orange.css" />
@@ -30,7 +30,7 @@
 
     <!-- Template JS Files -->
     <script src="./static/js/modernizr.js"></script>
-
+{% load widget_tweaks %}
 </head>
 
 <body class="auth-page">
@@ -61,49 +61,13 @@
         </div>
     </div>
     <!-- SVG Preloader Ends -->
-	<!-- Live Style Switcher Starts - demo only -->
-    <div id="switcher" class="">
-        <div class="content-switcher">
-            <h4>STYLE SWITCHER</h4>
-            <ul>
-                <li>
-                    <a id="orange-css" href="#" title="orange" class="color"><img src="images/styleswitcher/colors/orange.png" alt="" width="30" height="30" /></a>
-                </li>
-                <li>
-                    <a id="green-css" href="#" title="green" class="color"><img src="images/styleswitcher/colors/green.png" alt="" width="30" height="30" /></a>
-                </li>
-                <li>
-                    <a id="blue-css" href="#" title="blue" class="color"><img src="images/styleswitcher/colors/blue.png" alt="" width="30" height="30" /></a>
-                </li>
-            </ul>
-
-            <p>BODY SKIN</p>
-			
-			<label><input class="dark_switch" type="radio" name="color_style" id="is_dark" value="dark" checked="checked" /> Dark</label>
-            <label><input class="dark_switch" type="radio" name="color_style" id="is_light" value="light" /> Light</label>
-
-            <hr />
-
-            <p>LAYOUT STYLE</p>
-            <label><input class="boxed_switch" type="radio" name="layout_style" id="is_wide" value="wide" checked="checked" /> Wide</label>
-            <label><input class="boxed_switch" type="radio" name="layout_style" id="is_boxed" value="boxed" /> Boxed</label>
-
-            <hr />
-
-            <a href="#" class="custom-button purchase">Purchase</a>
-            <div id="hideSwitcher">&times;</div>
-
-        </div>
-    </div>
-    <div id="showSwitcher" class="styleSecondColor"><i class="fa fa-cog fa-spin"></i></div>
-    <!-- Live Style Switcher Ends - demo only -->
     <!-- Wrapper Starts -->
     <div class="wrapper">
         <div class="container-fluid user-auth">
 			<div class="hidden-xs col-sm-4 col-md-4 col-lg-4">
 				<!-- Logo Starts -->
 				<a class="logo" href="index-2.html">
-					<img id="logo-user" class="img-responsive" src="images/logo-dark.png" alt="logo">
+					<img id="logo-user" class="img-responsive" src="/static/images/logos/cryptoland.png" alt="logo">
 				</a>
 				<!-- Logo Ends -->
 				<!-- Slider Starts -->
@@ -155,7 +119,7 @@
 			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 				<!-- Logo Starts -->
 				<a class="visible-xs" href="index-2.html">
-					<img id="logo" class="img-responsive mobile-logo" src="images/logo-dark.png" alt="logo">
+					<img id="logo" class="img-responsive mobile-logo" src="/static/images/logos/cryptoland.png" alt="logo" style="width: 45%;">
 				</a>
 				<!-- Logo Ends -->
 				<div class="form-container">
@@ -167,30 +131,28 @@
 						</div>
 						<!-- Section Title Ends -->
 						<!-- Form Starts -->
-						<form>
+						<form method="POST">
+							{% csrf_token %}
 							<!-- Input Field Starts -->
 							<div class="form-group">
-								<input class="form-control" name="email" id="email" placeholder="EMAIL" type="email" required>
+								{{ form.username|add_class:'form-control'|attr:'placeholder:email'}}
 							</div>
 							<!-- Input Field Ends -->
 							<!-- Input Field Starts -->
 							<div class="form-group">
-								<input class="form-control" name="password" id="password" placeholder="PASSWORD" type="password" required>
+								{{ form.password|add_class:'form-control'|attr:'placeholder:password' }}
 							</div>
 							<!-- Input Field Ends -->
 							<!-- Submit Form Button Starts -->
 							<div class="form-group">
 								<button class="btn btn-primary" type="submit">login</button>
-								<p class="text-center">don't have an account ? <a href="register.html">register now</a>
+								<p class="text-center">don't have an account ? <a href="{% url 'main:register' %}">register now</a>
 							</div>
 							<!-- Submit Form Button Ends -->
 						</form>
 						<!-- Form Ends -->
 					</div>
 				</div>
-				<!-- Copyright Text Starts -->
-				<p class="text-center copyright-text"><a href="a1technologiesio.online">@ A1 Technologies.io</a></p>
-				<!-- Copyright Text Ends -->
 			</div>
 		</div>
  <!-- Template JS Files -->

@@ -1,0 +1,180 @@
+﻿{% extends "dashboard/dashboard-base.html" %}
+{% block dashboard %}
+<div class="wrapper">
+
+    <header class="main-header">
+        <!-- Logo -->
+
+        <!-- Header Navbar -->
+        <nav class="navbar navbar-static-top">
+            <!-- Sidebar toggle button-->
+            <div>
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <i class="ti-align-left"></i>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    {% include 'dashboard/sidebar.html' %}
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <div class="container-full">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <h3>
+                    Dashboard
+                    <small>Control panel</small>
+                </h3>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </div>
+
+            <!-- Main content -->
+            <section class="content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="box box-inverse box-dark">
+                            <!-- TradingView Widget BEGIN -->
+                            <div class="tradingview-widget-container">
+                                <div class="tradingview-widget-container__widget"></div>
+                                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                                    {
+                                        "symbols": [{
+                                            "proName": "FOREXCOM:SPXUSD",
+                                            "title": "S&P 500"
+                                        }, {
+                                            "proName": "FOREXCOM:NSXUSD",
+                                            "title": "Nasdaq 100"
+                                        }, {
+                                            "proName": "FX_IDC:EURUSD",
+                                            "title": "EUR/USD"
+                                        }, {
+                                            "proName": "BITSTAMP:BTCUSD",
+                                            "title": "BTC/USD"
+                                        }, {
+                                            "proName": "BITSTAMP:ETHUSD",
+                                            "title": "ETH/USD"
+                                        }],
+                                        "colorTheme": "light",
+                                        "isTransparent": false,
+                                        "displayMode": "regular",
+                                        "locale": "en"
+                                    }
+                                </script>
+                            </div>
+                            <!-- TradingView Widget END -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="box">
+                            <div class="box-body box-inverse bg-info p-0">
+                                <div class="box-header no-border">
+                                    <h4>Balance</h4>
+                                </div>
+                                <div class="box-body p-10">
+                                    <h1 class="text-center"><small>$</small>4, 0100</h1>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="box">
+                            <div class="box-body box-inverse bg-info p-0">
+                                <div class="box-header no-border">
+                                    <h4>Total Invested</h4>
+                                </div>
+                                <div class="box-body p-10">
+                                    <h1 class="text-center"><small>$</small>84,125,859</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="box">
+                            <div class="box-body box-inverse bg-error p-0">
+                                <div class="box-header no-border">
+                                    <h4>Available Withdrawal</h4>
+                                </div>
+                                <div class="box-body p-10">
+                                    <h1 class="text-center"><small>$</small>84,125,859</h1>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- withdrawal form -->
+                <div class="row">
+                    <h2>DEPOSIT TO YOUR ACCOUNT</h2>
+                    <p>Kindly make a deposit via any of the payment methods below to instatntiate your Account so You can start trading on the platform </p>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-5">
+                        <div class="card">
+                            <div class="box-body wizard-content">
+                                <div class="row text-center">
+                                    <div class="col-3">
+                                        <span class="fab fa-bitcoin font-size-50"></span>
+                                    </div>
+                                    <div class="col-9 py-4">
+                                        <h4>DEPOSIT WITH BITCOIN</h4> 
+                                    </div>
+                                </div>
+                                <a href="#btc-address-collapse" class="mx-5" data-toggle="collapse" aria-expanded="false" aria-controls='btc-address-collapse'>
+                                    <i class="fas fa-arrow-down"></i>    
+                                    Expand
+                                </a>
+                            </div>
+                            <div class="card-body bg-primary collapse text-center" id="btc-address-collapse">
+                                <h4>Scan the Barcode to Start the deposit process</h4>
+                                <img src="/static/img/crypto-land-btc-address.jpeg" alt="">
+
+                                <h3>OR</h3>
+                                <h4>Copy and Pay To the bitcoin Address below</h4>
+                                <input type="text" value="3Mfh6HbQbie2oV5qpijfUESMHaEwockLTP" id="btc-address-input">
+                                <button class="btn btc-copy" data-clipboard-target='#btc-address-input'>
+                                    <i class="fas fa-clipboard"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card">
+                            <div class="box-body wizard-content">
+                                <div class="row text-center">
+                                    <div class="col-3">
+                                        <span class="fab fa-paypal font-size-50"></span>
+                                    </div>
+                                    <div class="col-9 py-4">
+                                        <h4>DEPOSIT WITH PAYPAL</h4> 
+                                    </div>
+                                </div>
+                                <a href="#paypal-pay-collapse" class="mx-5" data-toggle="collapse" aria-expanded="false" aria-controls='paypal-pay-collapse'>
+                                    <i class="fas fa-arrow-down"></i>    
+                                    Expand
+                                </a>
+                            </div>
+                            <div class="card-body bg-primary collapse text-center" id="paypal-pay-collapse">
+                                <h4>Copy and Pay To the PayPal Account below</h4>
+                                <input type="text" value="paypal.me/cryptolandtrading" id="paypal-input">
+                                <button class="btn btc-copy" data-clipboard-target='#paypal-input'>
+                                    <i class="fas fa-clipboard"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock  %}
