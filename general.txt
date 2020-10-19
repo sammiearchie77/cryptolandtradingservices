@@ -5,7 +5,7 @@ python manage.py makemigrations && python manage.py migrate
 cp -r ./frontend/static ./cryptoland/main
 
 
-ssh root@46.101.109.109
+ssh root@134.122.113.33
 
 
 CREATE DATABASE cryptolifeinvestment;

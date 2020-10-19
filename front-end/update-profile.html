@@ -1,0 +1,531 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from crypto-admin-templates.multipurposethemes.com/sass/dark-multi/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Sep 2020 14:44:17 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://crypto-admin-templates.multipurposethemes.com/sass/images/favicon.ico">
+
+    <title>Crypto Admin - Responsive Bootstrap Admin HTML Templates + Bitcoin Dashboards + ICO </title>
+
+    <!-- Bootstrap 4.0-->
+    <link rel="stylesheet" href="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/bootstrap/dist/css/bootstrap.css">
+
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css">
+
+    <!--amcharts -->
+    <link href="https://www.amcharts.com/lib/3/plugins/export/export.css" rel="stylesheet" type="text/css" />
+
+    <!-- Data Table-->
+    <link rel="stylesheet" type="text/css" href="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/datatable/datatables.min.css" />
+
+    <!-- Morris charts -->
+    <link rel="stylesheet" href="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/morris.js/morris.css">
+
+    <!-- theme style -->
+    <link rel="stylesheet" href="./static/css/dashboard.css">
+
+    <!-- Crypto Admin skins -->
+    <link rel="stylesheet" href="./static/css/dashboard-color.css">
+
+    <!-- custom css  -->
+    <link rel="stylesheet" href="./static/css/main.css">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+    <!-- Themify -->
+    <link rel="stylesheet" href="./static/css/icons/themify/themify-icons.css">
+
+
+</head>
+
+<body class="hold-transition dark-skin dark-sidebar sidebar-mini theme-mix">
+
+    <div class="wrapper">
+
+        <header class="main-header">
+            <!-- Logo -->
+
+            <!-- Header Navbar -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <div>
+                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                        <i class="ti-align-left"></i>
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar-->
+            <section class="sidebar">
+
+                <div class="user-profile">
+                    <div class="ulogo">
+                        <a href="index.html">
+                            <!-- logo for regular state and mobile devices -->
+                            <h3></h3>
+                        </a>
+                    </div>
+                    <div class="profile-pic">
+                        <img src="http://crypto-admin-templates.multipurposethemes.com/sass/images/user5-128x128.jpg" alt="user">
+                        <div class="profile-info">
+                            <h5 class="mt-15">John Doe</h5>
+                            <div class="text-center d-inline-block">
+                                <a href="#" class="link" data-toggle="tooltip" title="" data-original-title="Settings"><i class="ion ion-gear-b"></i></a>
+                                <a href="#" class="link px-15" data-toggle="tooltip" title="" data-original-title="Email"><i class="ion ion-android-mail"></i></a>
+                                <a href="#" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ion ion-power"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- sidebar menu-->
+                <ul class="sidebar-menu" data-widget="tree">
+
+                    <li class="header nav-small-cap">PERSONAL</li>
+
+                    <li>
+                        <a href="pages/currency_exchange.html">
+                            <i class="ti-cup"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/currency_exchange.html">
+                            <i class="ti-arrow-down"></i>
+                            <span>Deposit</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/currency_exchange.html">
+                            <i class="ti-arrow-up"></i>
+                            <span>Withdraw</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/currency_exchange.html">
+                            <i class="ti-calendar"></i>
+                            <span>Transaction / Trading History</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/currency_exchange.html">
+                            <i class="ti-user"></i>
+                            <span>Update Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="pages/auth_login.html">
+                            <i class="ti-power-off"></i>
+                            <span>Log Out</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </section>
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <div class="container-full">
+                <!-- Content Header (Page header) -->
+                <div class="content-header">
+                    <h3>
+                        Dashboard
+                        <small>Control panel</small>
+                    </h3>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </div>
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="box box-inverse box-dark">
+                                <!-- TradingView Widget BEGIN -->
+                                <div class="tradingview-widget-container">
+                                    <div class="tradingview-widget-container__widget"></div>
+                                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                                        {
+                                            "symbols": [{
+                                                "proName": "FOREXCOM:SPXUSD",
+                                                "title": "S&P 500"
+                                            }, {
+                                                "proName": "FOREXCOM:NSXUSD",
+                                                "title": "Nasdaq 100"
+                                            }, {
+                                                "proName": "FX_IDC:EURUSD",
+                                                "title": "EUR/USD"
+                                            }, {
+                                                "proName": "BITSTAMP:BTCUSD",
+                                                "title": "BTC/USD"
+                                            }, {
+                                                "proName": "BITSTAMP:ETHUSD",
+                                                "title": "ETH/USD"
+                                            }],
+                                            "colorTheme": "light",
+                                            "isTransparent": false,
+                                            "displayMode": "regular",
+                                            "locale": "en"
+                                        }
+                                    </script>
+                                </div>
+                                <!-- TradingView Widget END -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="box">
+                                <div class="box-body box-inverse bg-info p-0">
+                                    <div class="box-header no-border">
+                                        <h4>Balance</h4>
+                                    </div>
+                                    <div class="box-body p-10">
+                                        <h1 class="text-center"><small>$</small>4, 0100</h1>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="box">
+                                <div class="box-body box-inverse bg-info p-0">
+                                    <div class="box-header no-border">
+                                        <h4>Total Invested</h4>
+                                    </div>
+                                    <div class="box-body p-10">
+                                        <h1 class="text-center"><small>$</small>84,125,859</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="box">
+                                <div class="box-body box-inverse bg-error p-0">
+                                    <div class="box-header no-border">
+                                        <h4>Available Withdrawal</h4>
+                                    </div>
+                                    <div class="box-body p-10">
+                                        <h1 class="text-center"><small>$</small>84,125,859</h1>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- withdrawal form -->
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="box-body wizard-content">
+                                    <form action="#" class="tab-wizard wizard-circle">
+                                        <!-- Step 1 -->
+                                        <h5>Client Information</h5>
+                                        <p>
+                                            Fill in the form to Update your existing profile bio data
+                                        </p>
+                                        <section>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="firstName5">First Name :</label>
+                                                        <input type="text" class="form-control" id="firstName5"> </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="lastName1">Last Name :</label>
+                                                        <input type="text" class="form-control" id="lastName1"> </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="emailAddress1">Email Address :</label>
+                                                        <input type="email" class="form-control" id="emailAddress1"> </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="phoneNumber1">Phone Number :</label>
+                                                        <input type="tel" class="form-control" id="phoneNumber1"> </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="addressline1">Address Line 1 :</label>
+                                                        <input type="text" class="form-control" id="addressline1"> </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="addressline2">Address Line 2 :</label>
+                                                        <input type="text" class="form-control" id="addressline2"> </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="location3">Select City :</label>
+                                                        <select class="custom-select form-control" id="location3" name="location">
+                                                            <option value="">Select City</option>
+                                                            <option value="Amsterdam">India</option>
+                                                            <option value="Berlin">USA</option>
+                                                            <option value="Frankfurt">Dubai</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="date1">Date of Birth :</label>
+                                                        <input type="date" class="form-control" id="date1"> </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <!-- Step 2 -->
+                                        <h6>Account Setup</h6>
+                                        <section>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="url123">URL :</label>
+                                                        <input type="url" class="form-control" id="url123" placeholder="http://">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="username123">Username :</label>
+                                                        <input type="text" class="form-control" id="username123">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="password123">Password :</label>
+                                                        <input type="password" class="form-control" id="password123">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>User Group :</label>
+                                                        <div class="c-inputs-stacked">
+                                                            <input name="group123" type="radio" id="radio_123" value="1">
+                                                            <label for="radio_123" class="d-block">Sales Person</label>
+                                                            <input name="group456" type="radio" id="radio_456" value="1">
+                                                            <label for="radio_456">Customer</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label>Communications :</label>
+                                                        <div class="c-inputs-stacked">
+                                                            <input type="checkbox" id="checkbox_123">
+                                                            <label for="checkbox_123" class="d-block">Email</label>
+                                                            <input type="checkbox" id="checkbox_234">
+                                                            <label for="checkbox_234" class="d-block">SMS</label>
+                                                            <input type="checkbox" id="checkbox_345">
+                                                            <label for="checkbox_345" class="d-block">Phone</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <!-- Step 3 -->
+                                        <h6>Billing Setup</h6>
+                                        <section>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="int123">Cardholder Name :</label>
+                                                        <input type="text" class="form-control" id="int123">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="int234">Card Number :</label>
+                                                        <input type="text" class="form-control" id="int234" placeholder="" value="23124567854356">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="row">
+                                                            <div class="col-4">
+                                                                <label for="intType1">Exp Month :</label>
+                                                                <select class="custom-select form-control" id="intType1" data-placeholder="Exp Month" name="intType1">
+                                                                    <option value="">Select</option>
+                                                                    <option value="01">01</option>
+                                                                    <option value="02">02</option>
+                                                                    <option value="03">03</option>
+                                                                    <option value="04" selected="">04</option>
+                                                                    <option value="05">05</option>
+                                                                    <option value="06">06</option>
+                                                                    <option value="07">07</option>
+                                                                    <option value="08">08</option>
+                                                                    <option value="09">09</option>
+                                                                    <option value="10">10</option>
+                                                                    <option value="11">11</option>
+                                                                    <option value="12">12</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <label for="intType1">Exp Year :</label>
+                                                                <select class="custom-select form-control" id="intType12" data-placeholder="Exp Year" name="intType12">
+                                                                    <option value="">Select</option>
+                                                                    <option value="2018">2018</option>
+                                                                    <option value="2019">2019</option>
+                                                                    <option value="2020">2020</option>
+                                                                    <option value="2021" selected="">2021</option>
+                                                                    <option value="2022">2022</option>
+                                                                    <option value="2023">2023</option>
+                                                                    <option value="2024">2024</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                <label for="intType1">CVV :</label>
+                                                                <input type="number" class="form-control" name="billing_card_cvv" placeholder="" value="450">
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="Location1">Location :</label>
+                                                        <select class="custom-select form-control" id="Location1" name="location">
+                                                            <option value="">Select City</option>
+                                                            <option value="India">India</option>
+                                                            <option value="USA">USA</option>
+                                                            <option value="Dubai">Dubai</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="addressline12">Address Line 1 :</label>
+                                                        <input type="text" class="form-control" id="addressline12">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="addressline13">Address Line 1 :</label>
+                                                        <input type="text" class="form-control" id="addressline13">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Delivery Type :</label>
+                                                        <div class="c-inputs-stacked">
+                                                            <input name="group1" type="radio" id="radio_1" value="1">
+                                                            <label for="radio_1" class="d-block">Standart Delevery</label>
+                                                            <input name="group1" type="radio" id="radio_2" value="1">
+                                                            <label for="radio_2">Fast Delevery</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <!-- Step 4 -->
+                                        <h6>Confirmation</h6>
+                                        <section>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label for="decisions1">Comments</label>
+                                                        <textarea name="decisions" id="decisions1" rows="4" class="form-control"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="c-inputs-stacked">
+                                                            <input type="checkbox" id="checkbox_1">
+                                                            <label for="checkbox_1" class="d-block">Click here to indicate that you have read and agree to the terms presented in the Terms and Conditions agreement</label>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+
+
+
+
+                    <!-- jQuery 3 -->
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/jquery-3.3.1/jquery-3.3.1.js"></script>
+
+                    <!-- fullscreen -->
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/screenfull/screenfull.js"></script>
+
+                    <!-- jQuery UI 1.11.4 -->
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/jquery-ui/jquery-ui.js"></script>
+
+                    <!-- popper -->
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/popper/dist/popper.min.js"></script>
+
+                    <!-- Bootstrap 4.0-->
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/bootstrap/dist/js/bootstrap.js"></script>
+
+                    <!-- Slimscroll -->
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+                    <!-- FastClick -->
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/fastclick/lib/fastclick.js"></script>
+
+                    <!-- Bootstrap WYSIHTML5 -->
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js"></script>
+
+                    <!-- Morris.js charts -->
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/raphael/raphael.min.js"></script>
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/morris.js/morris.min.js"></script>
+
+                    <!-- ChartJS -->
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/chart.js-master/Chart.min.js"></script>
+
+                    <!--amcharts charts -->
+                    <script src="http://www.amcharts.com/lib/3/amcharts.js" type="text/javascript"></script>
+                    <script src="http://www.amcharts.com/lib/3/gauge.js" type="text/javascript"></script>
+                    <script src="http://www.amcharts.com/lib/3/serial.js" type="text/javascript"></script>
+                    <script src="http://www.amcharts.com/lib/3/amstock.js" type="text/javascript"></script>
+                    <script src="http://www.amcharts.com/lib/3/pie.js" type="text/javascript"></script>
+                    <script src="https://www.amcharts.com/lib/3/plugins/dataloader/dataloader.min.js"></script>
+                    <script src="http://www.amcharts.com/lib/3/plugins/animate/animate.min.js" type="text/javascript"></script>
+                    <script src="http://www.amcharts.com/lib/3/plugins/export/export.min.js" type="text/javascript"></script>
+                    <script src="http://www.amcharts.com/lib/3/themes/patterns.js" type="text/javascript"></script>
+                    <script src="http://www.amcharts.com/lib/3/themes/dark.js" type="text/javascript"></script>
+
+                    <!-- webticker -->
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/Web-Ticker-master/jquery.webticker.min.js"></script>
+
+                    <!-- EChartJS JavaScript -->
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/echarts-master/dist/echarts-en.min.js"></script>
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/echarts-liquidfill-master/dist/echarts-liquidfill.min.js"></script>
+
+                    <!-- This is data table -->
+                    <script src="http://crypto-admin-templates.multipurposethemes.com/sass/assets/vendor_components/datatable/datatables.min.js"></script>
+
+                    <!-- Crypto Admin App -->
+                    <script src="./static/js/dashboard/template.js"></script>
+                    <!-- <script src="./static/js/dashboard/template.js"></script> -->
+
+                    <!-- Crypto Admin dashboard demo (This is only for demo purposes) -->
+                    <script src="./static/js/dashboard/pages/dashboard.js"></script>
+                    <script src="./static/js/dashboard/pages/dashboard-chart.js"></script>
+
+                    <!-- Crypto Admin for demo purposes -->
+                    <script src="./static/js/dashboard/demo.js"></script>
+
+</body>
+
+<!-- Mirrored from crypto-admin-templates.multipurposethemes.com/sass/dark-multi/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Sep 2020 14:46:40 GMT -->
+
+</html>

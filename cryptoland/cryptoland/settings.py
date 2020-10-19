@@ -25,7 +25,7 @@ SECRET_KEY = 'ciy2t-5t()+wf!_m+ki212^pnusd0nqp%^n57wzv^fcq93clib'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['134.122.113.33', 'localhost', 'cryptolandtradingservices.com', ]
 
 
 # Application definition
