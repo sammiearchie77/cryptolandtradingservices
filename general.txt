@@ -9,7 +9,7 @@ find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
 find . -path "*/migrations/*.pyc"  -delete
 
 
-ssh root@134.122.113.33
+ssh root@157.245.103.157
 
 
 CREATE DATABASE cryptoland;

@@ -12,6 +12,8 @@ from .views import dashboard, id_verification, account_upgrade, create_profile,e
 # validation routes
 from .views import validate_login, validate_registration
 
+from . import views
+
 # settings 
 from django.conf import settings 
 from django.conf.urls.static import static
@@ -24,11 +26,14 @@ urlpatterns = [
     # about
     path('about/', about, name='about'),
     path('contact/', contact, name='contact'),
+    path('services/', views.services, name='services'),
     # terms and conditions, Privacy policy
-    path('terms-and-conditions/', terms_and_condition, name='terms-and-conditions'),
+    path('terms-of-services/', terms_and_condition, name='terms-of-services'),
     path('privacy-policy', privacy_policy, name='privacy-policy'),
     path('safety-of-funds', safety_of_funds, name='safety-of-funds'),
+    path('pricing/', views.pricing, name='pricing'),
     # frequently asked questions 
+    
     path('faq/', faq ,name='faq'),
     # dashboard routes
     path('dashboard/', dashboard, name="dashboard"),

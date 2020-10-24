@@ -33,30 +33,17 @@ def index(request):
 def about(request):
     return render(request, 'main/about.html')
 
+# services
+def services(request):
+    return render(request, 'main/services.html')
+
 # contact page
 # send mail thing
 from django.core.mail import send_mail
 
 def contact(request):
-    if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            topic = form.cleaned_data.get('topic')
-            name = form.cleaned_data.get('name')
-            email = form.cleaned_data.get('email')
-            message = form.cleaned_data.get('message')
-            send_mail(topic,message,'support@cryptolifeinvestment.com', [email,])
+    return render(request, 'main/contact.html')
 
-            return redirect('main:home')
-        else:
-            print('form invalid')
-
-    else:
-        form = ContactForm()
-    context = {
-        'form': form
-    }
-    return render(request, 'main/contact.html', context)
 # frequently asked questions
 def faq(request):
     return render(request, 'main/faq.html')    
@@ -70,8 +57,11 @@ def payment_policy(request):
 
 # terms and conditions
 def terms_and_condition(request):
-    return render(request,'main/terms-and-conditions.html')
+    return render(request,'main/terms-of-services.html')
 
+def pricing(request):
+    return render(request, 'main/pricing.html')
+    
 def safety_of_funds(request):
     return render(request, 'main/safety-of-funds.html')
      
@@ -329,7 +319,7 @@ def edit_profile(request):
     instance = get_object_or_404(Profile, user=user)
     print(user)
     if request.method == 'POST':
-        form = ProfileForm(request.POST, instance=instance)
+        form = ProfileForm(request.POST, request.FILES, instance=instance)
         if form.is_valid():
             form.save()     
     else:

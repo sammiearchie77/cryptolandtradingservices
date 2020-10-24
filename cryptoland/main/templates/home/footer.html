@@ -1,0 +1,96 @@
+{% block footer %}
+<!-- Footer Starts -->
+<footer class="footer">
+    <!-- Footer Top Area Starts -->
+    <div class="top-footer">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Widget Starts -->
+                <div class="col-sm-4 col-md-2">
+                    <h4>Our Company</h4>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="{% url 'main:index' %}">Home</a></li>
+                            <li><a href="{% url 'main:about' %}">About</a></li>
+                            <li><a href="{% url 'main:services' %}">Services</a></li>
+                            <li><a href="{% url 'main:pricing' %}">Pricing</a></li>
+                            <li><a href="{% url 'main:contact' %}">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Footer Widget Ends -->
+                <!-- Footer Widget Starts -->
+                <div class="col-sm-4 col-md-2">
+                    <h4>Help & Support</h4>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="{% url 'main:faq' %}">FAQ</a></li>
+                            <li><a href="{% url 'main:terms-of-services' %}">Terms of Services</a></li>
+                            <li><a href="{% url 'main:register' %}">Register</a></li>
+                            <li><a href="{% url 'login' %}">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Footer Widget Ends -->
+                <!-- Footer Widget Starts -->
+                <div class="col-sm-4 col-md-3">
+                    <h4>Contact Us </h4>
+                    <div class="contacts">
+                        <div>
+                            <span>support@Cryptolandtradingservices.com</span>
+                        </div>
+                        <div>
+                            <span>00216 21 184 010</span>
+                        </div>
+                        <div>
+                            <span>London, England</span>
+                        </div>
+                        <div>
+                            <span>mon-sat 08am &#x21FE; 05pm</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer Widget Ends -->
+                <!-- Footer Widget Starts -->
+                <div class="col-sm-12 col-md-5">
+                    <!-- Facts Starts -->
+                    <div class="facts-footer">
+                        <div>
+                            <h5>$198.76B</h5>
+                            <span>Market cap</span>
+                        </div>
+                        <div>
+                            <h5>243K</h5>
+                            <span>daily transactions</span>
+                        </div>
+                        <div>
+                            <h5>369K</h5>
+                            <span>active accounts</span>
+                        </div>
+                        <div>
+                            <h5>127</h5>
+                            <span>supported countries</span>
+                        </div>
+                    </div>
+                    <!-- Facts Ends -->
+                    <hr>
+                    <!-- Supported Payment Cards Logo Starts -->
+                    <div class="payment-logos">
+                        <h4 class="payment-title">supported payment methods</h4>
+                        <img src="/static/images/icons/payment/american-express.png" alt="american-express">
+                        <img src="/static/images/icons/payment/mastercard.png" alt="mastercard">
+                        <img src="/static/images/icons/payment/visa.png" alt="visa">
+                        <img src="/static/images/icons/payment/paypal.png" alt="paypal">
+                        <img class="last" src="/static/images/icons/payment/maestro.png" alt="maestro">
+                    </div>
+                    <!-- Supported Payment Cards Logo Ends -->
+                </div>
+                <!-- Footer Widget Ends -->
+            </div>
+        </div>
+    </div>
+    <!-- Footer Top Area Ends -->
+</footer>
+<!-- Footer Ends -->
+  
+{% endblock  %}

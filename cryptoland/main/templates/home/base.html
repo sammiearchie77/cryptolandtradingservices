@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-
+    {% load static %}
     <meta charset="utf-8" />
     <title>Cryptoland trading services</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,16 +20,17 @@
     <link rel="stylesheet" href="/static/css/animate.css">
 
     <!-- Live Style Switcher - demo only -->
-    <link rel="alternate stylesheet" type="text/css" title="orange" href="./static/css/skins/orange.css" />
-    <link rel="alternate stylesheet" type="text/css" title="green" href="./static/css/skins/green.css" />
-    <link rel="alternate stylesheet" type="text/css" title="blue" href="./static/css/skins/blue.css" />
-    <link rel="stylesheet" type="text/css" href="./static/css/styleswitcher.css" />
+    <link rel="alternate stylesheet" type="text/css" title="orange" href="/static/css/skins/orange.css" />
+    <link rel="alternate stylesheet" type="text/css" title="green" href="/static/css/skins/green.css" />
+    <link rel="alternate stylesheet" type="text/css" title="blue" href="/static/css/skins/blue.css" />
+    <link rel="stylesheet" type="text/css" href="/static/css/styleswitcher.css" />
 
     <!-- animation cdn  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- Template JS Files -->
-    <script src="./static/js/modernizr.js"></script>
+    <!-- <script src="/static/js/modernizr.js"></script> -->
+    <script src="{% static 'js/modernizr.js' %}"></script>
 
 </head>
 
@@ -64,8 +65,7 @@
 {% block body %}  
 {% endblock  %}
 
-
-        <!-- Template JS Files -->
+     <!-- Template JS Files -->
         <script src="/static/js/jquery-2.2.4.min.js"></script>
         <script src="/static/js/bootstrap.min.js"></script>
         <script src="/static/js/select2.min.js"></script>

@@ -6,19 +6,22 @@
 
         <div class="user-profile">
             <div class="ulogo">
-                <a href="index.html">
+                <a href="{% url 'main:index' %}">
                     <!-- logo for regular state and mobile devices -->
-                    <h3></h3>
+                    <h3>CRYPTO Land</h3>
                 </a>
             </div>
             <div class="profile-pic">
-                <img src="{{ request.user.profile.profile_picture }}" alt="user">
+                {% if request.user.profile.profile_picture %}
+                <img src="{{ request.user.profile.profile_picture.url }}" alt="user">
+                {% else %}
+                <img src="" alt="No image">
+                {% endif %}
                 <div class="profile-info">
-                    <h5 class="mt-15">John Doe</h5>
+                    <h5 class="mt-15">{{ request.user.profile.first_name}} {{ request.user.profile.last_name}} </h5>
                     <div class="text-center d-inline-block">
-                        <a href="#" class="link" data-toggle="tooltip" title="" data-original-title="Settings"><i class="ion ion-gear-b"></i></a>
-                        <a href="#" class="link px-15" data-toggle="tooltip" title="" data-original-title="Email"><i class="ion ion-android-mail"></i></a>
-                        <a href="#" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ion ion-power"></i></a>
+                        <a href="{% url 'main:edit-profile' %}" class="link mr-2" data-toggle="tooltip" title="" data-original-title="Settings"><i class="fas fa-user"></i></a>
+                        <a href="{% url 'main:logout' %}" class="" data-toggle="tooltip" title="" data-original-title="Logout"><i class="ion ion-power"></i></a>
                     </div>
                 </div>
             </div>

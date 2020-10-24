@@ -1,35 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
+{% load static %}
 <head>
 
     <meta charset="utf-8" />
-    <title>About Us - CryptoLand trading Services</title>
+    <title>Contact</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon.png">
 
     <!-- Template CSS Files -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/select2.min.css">
-    <link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/skins/orange.css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/select2.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/style.css' %} ">
+	<link rel="stylesheet" href="{% static 'css/skins/orange.css' %} ">
 	
 	<!-- Live Style Switcher - demo only -->
-    <link rel="alternate stylesheet" type="text/css" title="orange" href="css/skins/orange.css" />
-    <link rel="alternate stylesheet" type="text/css" title="green" href="css/skins/green.css" />
-    <link rel="alternate stylesheet" type="text/css" title="blue" href="css/skins/blue.css" />
-    <link rel="stylesheet" type="text/css" href="css/styleswitcher.css" />
+    <link rel="alternate stylesheet" type="text/css" title="orange" href="{% static 'css/skins/orange.css" ' %} />
+    <link rel="alternate stylesheet" type="text/css" title="green" href="{% static 'css/skins/green.css" ' %} />
+    <link rel="alternate stylesheet" type="text/css" title="blue" href="{% static 'css/skins/blue.css" ' %} />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleswitcher.css" ' %} />
 
     <!-- Template JS Files -->
-    <script src="js/modernizr.js"></script>
+    <script src="/static/js/modernizr.js"></script>
 
 </head>
-
 <body>
     <!-- SVG Preloader Starts -->
     <div id="preloader">
@@ -58,154 +57,9 @@
         </div>
     </div>
     <!-- SVG Preloader Ends -->
-	<!-- Live Style Switcher Starts - demo only -->
-    <div id="switcher" class="">
-        <div class="content-switcher">
-            <h4>STYLE SWITCHER</h4>
-            <ul>
-                <li>
-                    <a id="orange-css" href="#" title="orange" class="color"><img src="images/styleswitcher/colors/orange.png" alt="" width="30" height="30" /></a>
-                </li>
-                <li>
-                    <a id="green-css" href="#" title="green" class="color"><img src="images/styleswitcher/colors/green.png" alt="" width="30" height="30" /></a>
-                </li>
-                <li>
-                    <a id="blue-css" href="#" title="blue" class="color"><img src="images/styleswitcher/colors/blue.png" alt="" width="30" height="30" /></a>
-                </li>
-            </ul>
-
-            <p>BODY SKIN</p>
-			
-			<label><input class="dark_switch" type="radio" name="color_style" id="is_dark" value="dark" checked="checked" /> Dark</label>
-            <label><input class="dark_switch" type="radio" name="color_style" id="is_light" value="light" /> Light</label>
-
-            <hr />
-
-            <p>LAYOUT STYLE</p>
-            <label><input class="boxed_switch" type="radio" name="layout_style" id="is_wide" value="wide" checked="checked" /> Wide</label>
-            <label><input class="boxed_switch" type="radio" name="layout_style" id="is_boxed" value="boxed" /> Boxed</label>
-
-            <hr />
-
-            <a href="#" class="custom-button purchase">Purchase</a>
-            <div id="hideSwitcher">&times;</div>
-
-        </div>
-    </div>
-    <div id="showSwitcher" class="styleSecondColor"><i class="fa fa-cog fa-spin"></i></div>
-    <!-- Live Style Switcher Ends - demo only -->
-    <!-- Wrapper Starts -->
+	<!-- Wrapper Starts -->
     <div class="wrapper">
-        <!-- Header Starts -->
-        <header class="header">
-            <div class="container">
-                <div class="row">
-                    <!-- Logo Starts -->
-                    <div class="main-logo col-xs-12 col-md-3 col-md-2 col-lg-2 hidden-xs">
-                        <a href="index-2.html">
-							<img id="logo" class="img-responsive" src="images/logo-dark.png" alt="logo">
-						</a>
-                    </div>
-                    <!-- Logo Ends -->
-                    <!-- Statistics Starts -->
-                    <div class="col-md-7 col-lg-7">
-                        <ul class="unstyled bitcoin-stats text-center">
-                            <li>
-                                <h6>9,450 USD</h6><span>Last trade price</span></li>
-                            <li>
-                                <h6>+5.26%</h6><span>24 hour price</span></li>
-                            <li>
-                                <h6>12.820 BTC</h6><span>24 hour volume</span></li>
-                            <li>
-                                <h6>2,231,775</h6><span>active traders</span></li>
-                            <li>
-                                <div class="btcwdgt-price" data-bw-theme="light" data-bw-cur="usd"></div>
-                                <span>Live Bitcoin price</span>
-							</li>
-                        </ul>
-                    </div>
-                    <!-- Statistics Ends -->
-                    <!-- User Sign In/Sign Up Starts -->
-                    <div class="col-md-3 col-lg-3">
-                        <ul class="unstyled user">
-                            <li class="sign-in"><a href="login.html" class="btn btn-primary"><i class="fa fa-user"></i> sign in</a></li>
-                            <li class="sign-up"><a href="register.html" class="btn btn-primary"><i class="fa fa-user-plus"></i> register</a></li>
-                        </ul>
-                    </div>
-                    <!-- User Sign In/Sign Up Ends -->
-                </div>
-            </div>
-            <!-- Navigation Menu Starts -->
-            <nav class="site-navigation navigation" id="site-navigation">
-                <div class="container">
-                    <div class="site-nav-inner">
-                        <!-- Logo For ONLY Mobile display Starts -->
-                        <a class="logo-mobile" href="index-2.html">
-							<img id="logo-mobile" class="img-responsive" src="images/logo-dark.png" alt="">
-						</a>
-                        <!-- Logo For ONLY Mobile display Ends -->
-                        <!-- Toggle Icon for Mobile Starts -->
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-                        <!-- Toggle Icon for Mobile Ends -->
-                        <div class="collapse navbar-collapse navbar-responsive-collapse">
-                            <!-- Main Menu Starts -->
-                            <ul class="nav navbar-nav">
-                                <li><a href="index-2.html">Home</a></li>
-                                <li class="active"><a href="about.html">About Us</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <i class="fa fa-angle-down"></i></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="blog-right-sidebar.html">Right Sidebar</a></li>
-                                        <li><a href="blog-left-sidebar.html">Left Sidebar</a></li>
-										<li><a href="blog-grid-no-sidebar.html">Grid No Sidebar</a></li>
-                                        <li><a href="blog-post.html">Single Post</a></li>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">pages <i class="fa fa-angle-down"></i></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="register.html">Register page</a></li>
-                                        <li><a href="login.html">Login page</a></li>
-										<li><a href="shopping-cart.html">Shopping cart</a></li>
-                                        <li><a href="shopping-checkout.html">shopping checkout</a></li>
-                                        <li><a href="faq.html">FAQ page</a></li>
-                                        <li><a href="404.html">404 Page</a></li>
-										<li><a href="503.html">Server Error Page</a></li>
-                                        <li><a href="terms-of-services.html">Terms of Services</a></li>
-										<li><a href="coming-soon.html">Coming Soon</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="contact.html">Contact</a></li>
-								<!-- Cart Icon Starts -->
-								<li class="cart"><a href="shopping-cart.html"><i class="fa fa-shopping-cart"></i></a></li>
-								<!-- Cart Icon Starts -->
-                                <!-- Search Icon Starts -->
-                                <li class="search"><button class="fa fa-search"></button></li>
-                                <!-- Search Icon Ends -->
-                            </ul>
-                            <!-- Main Menu Ends -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Search Input Starts -->
-                <div class="site-search">
-                    <div class="container">
-                        <input type="text" placeholder="type your keyword and hit enter ...">
-                        <span class="close">×</span>
-                    </div>
-                </div>
-                <!-- Search Input Ends -->
-            </nav>
-            <!-- Navigation Menu Ends -->
-        </header>
-        <!-- Header Ends -->
+        {% include "home/navigation.html" %}
 		<!-- Banner Area Starts -->
 		<section class="banner-area">
 			<div class="banner-overlay">
@@ -220,7 +74,7 @@
 								<hr>
 								<!-- Breadcrumb Starts -->
 								<ul class="breadcrumb">
-									<li><a href="index-2.html"> home</a></li>
+									<li><a href="{% url 'main:index' %}"> home</a></li>
 									<li>About</li>
 								</ul>
 								<!-- Breadcrumb Ends -->
@@ -239,7 +93,7 @@
                 <div class="row about-content">
                     <!-- Image Starts -->
                     <div class="col-sm-12 col-md-5 col-lg-6 text-center">
-                        <img id="about-us" class="img-responsive img-about-us" src="images/about-us.png" alt="about us">
+                        <img id="about-us" class="img-responsive img-about-us" src="/static/images/about-us.png" alt="about us">
                     </div>
                     <!-- Image Ends -->
                     <!-- Content Starts -->
@@ -252,7 +106,7 @@
 							<h3 class="title-about risk-title"><i class="fa fa-warning"></i> risk warning</h3>
 							<p>Bitcoin is not legal tender and is not backed by any government. Accounts and value balances are not subject to any government backed deposit insurance or any other government protections.</p>
 						</div>
-						<a class="btn btn-primary btn-services" href="services.html">Our services</a>
+						<a class="btn btn-primary btn-services" href="{% url 'main:services' %}">Our services</a>
                     </div>
                     <!-- Content Ends -->
 					
@@ -296,9 +150,7 @@
 					</div>
 					<!-- Fact Badge Item Ends -->
 					<div class="col-xs-12 buttons">
-						<a class="btn btn-primary btn-pricing" href="register.html">See pricing</a>
-						<span class="or"> or </span>
-						<a class="btn btn-primary btn-register" href="register.html">Register Now</a>
+						<a class="btn btn-primary btn-register" href="{% url 'main:register' %}">Register Now</a>
 					</div>
 				</div>
 				<!-- Fact Badges Ends -->
@@ -323,7 +175,7 @@
                     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
                         <div class="team-member">
                             <!-- Team Member Picture Starts -->
-                            <img src="images/team/member1.jpg" class="img-responsive" alt="team member">
+                            <img src="/static/images/team/member1.jpg" class="img-responsive" alt="team member">
                             <!-- Team Member Picture Ends -->
                             <!-- Team Member Details Starts -->
                             <div class="team-member-caption social-icons">
@@ -349,7 +201,7 @@
                     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
                         <div class="team-member">
                             <!-- Team Member Picture Starts -->
-                            <img src="images/team/member2.jpg" class="img-responsive" alt="team member">
+                            <img src="/static/images/team/member2.jpg" class="img-responsive" alt="team member">
                             <!-- Team Member Picture Ends -->
                             <!-- Team Member Details Starts -->
                             <div class="team-member-caption social-icons">
@@ -376,7 +228,7 @@
                         <!-- Team Member-->
                         <div class="team-member">
                             <!-- Team Member Picture Starts -->
-                            <img src="images/team/member3.jpg" class="img-responsive" alt="team member">
+                            <img src="/static/images/team/member3.jpg" class="img-responsive" alt="team member">
                             <!-- Team Member Picture Ends -->
                             <!-- Team Member Details Starts -->
                             <div class="team-member-caption social-icons">
@@ -395,6 +247,7 @@
                                 </ul>
                             </div>
                             <!-- Team Member Details Ends -->
+                            
                         </div>
                     </div>
                     <!-- Team Member Ends -->
@@ -402,7 +255,7 @@
                     <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
                         <div class="team-member">
                             <!-- Team Member Picture Starts -->
-                            <img src="images/team/member4.jpg" class="img-responsive" alt="team member">
+                            <img src="/static/images/team/member4.jpg" class="img-responsive" alt="team member">
                             <!-- Team Member Picture Ends -->
                             <!-- Team Member Details Starts -->
                             <div class="team-member-caption social-icons">
@@ -442,7 +295,7 @@
 							</div>
 							<!-- Call To Action Text Ends -->
 							<!-- Call To Action Button Starts -->
-							<p class="action-btn"><a class="btn btn-primary" href="register.html">Register Now</a></p>
+							<p class="action-btn"><a class="btn btn-primary" href="{% url 'main:register' %}">Register Now</a></p>
 							<!-- Call To Action Button Ends -->
 						</div>
 					</div>
@@ -553,39 +406,25 @@
                     </div>
                 </div>
             </div>
-            <!-- Footer Top Area Ends -->
-            <!-- Footer Bottom Area Starts -->
-            <div class="bottom-footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <!-- Copyright Text Starts -->
-                            <p class="text-center"><a href="www.a1technologiesio.online" target="_blank">@ A1 Technologies</a></p>
-                            <!-- Copyright Text Ends -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer Bottom Area Ends -->
         </footer>
         <!-- Footer Ends -->
 		<!-- Back To Top Starts  -->
         <a href="#" id="back-to-top" class="back-to-top fa fa-arrow-up"></a>
 		<!-- Back To Top Ends  -->
 		
-        <!-- Template JS Files -->
-        <script src="js/jquery-2.2.4.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/select2.min.js"></script>
-        <script src="js/jquery.magnific-popup.min.js"></script>
-        <script src="js/custom.js"></script>
-		
-		<!-- Live Style Switcher JS File - only demo -->
-		<script src="js/styleswitcher.js"></script>
-
-    </div>
-    <!-- Wrapper Ends -->
-</body>
-
-
-</html>
+               <!-- Template JS Files -->
+               <script src="/static/js/jquery-2.2.4.min.js"></script>
+               <script src="/static/js/bootstrap.min.js"></script>
+               <script src="/static/js/select2.min.js"></script>
+               <script src="/static/js/jquery.magnific-popup.min.js"></script>
+               <script src="/static/js/custom.js"></script>
+               
+               <!-- Live Style Switcher JS File - only demo -->
+               <script src="/static/js/styleswitcher.js"></script>
+       
+           </div>
+           <!-- Wrapper Ends -->
+       </body>
+       
+       
+       </html>

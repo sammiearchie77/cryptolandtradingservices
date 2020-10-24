@@ -4,7 +4,7 @@
         <div class="row">
             <!-- Logo Starts -->
             <div class="main-logo col-xs-12 col-md-3 col-md-2 col-lg-2 hidden-xs">
-                <a href="index-2.html">
+                <a href="{% url 'main:index' %}">
                     <img id="logo" class="img-responsive" src="../../static/images/logos/cryptoland.png" alt="logo">
                 </a>
             </div>
@@ -42,7 +42,7 @@
     <div class="container">
         <div class="site-nav-inner">
             <!-- Logo For ONLY Mobile display Starts -->
-            <a class="logo-mobile" href="index-2.html">
+            <a class="logo-mobile" href="{% url 'main:index' %}">
                 <img id="logo-mobile" class="img-responsive" src="images/logo-dark.png" alt="">
             </a>
             <!-- Logo For ONLY Mobile display Ends -->
@@ -57,25 +57,18 @@
             <div class="collapse navbar-collapse navbar-responsive-collapse">
                 <!-- Main Menu Starts -->
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li><li class="dropdown">
+                    <li class="active"><a href="{% url 'main:index' %}">Home</a></li>
+                    <li><a href="{% url 'main:about' %}">About Us</a></li>
+                    <li><a href="{% url 'main:services' %}">Services</a></li><li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">pages <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="register.html">Register page</a></li>
-                            <li><a href="login.html">Login page</a></li>
+                            <li><a href="{% url 'main:register' %}">Register page</a></li>
+                            <li><a href="{% url 'login' %}">Login page</a></li>
                             <li><a href="{% url 'main:faq' %}">FAQ page</a></li>
-                            <li><a href="terms-of-services.html">Terms of Services</a></li>
-                            <li><a href="coming-soon.html">Coming Soon</a></li>
+                            <li><a href="{% url 'main:terms-of-services' %}">Terms of Services</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <!-- Cart Icon Starts -->
-                    <li class="cart"><a href="shopping-cart.html"><i class="fa fa-shopping-cart"></i></a></li>
-                    <!-- Cart Icon Starts -->
-                    <!-- Search Icon Starts -->
-                    <li class="search"><button class="fa fa-search"></button></li>
-                    <!-- Search Icon Ends -->
+                    <li><a href="{% url 'main:contact' %}">Contact</a></li>
                 </ul>
                 <!-- Main Menu Ends -->
             </div>

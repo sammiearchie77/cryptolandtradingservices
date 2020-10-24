@@ -25,7 +25,7 @@
                         <div class="slider-text text-center">
                             <h3 class="slide-title"><span>Secure</span> an <span>Easy Way</span><br/> To Bitcoin</h3>
                             <p>
-                                <a href="about.html" class="slider btn btn-primary">Learn more</a>
+                                <a href="{% url 'main:about' %}" class="slider btn btn-primary">Learn more</a>
                             </p>
                         </div>
                     </div>
@@ -40,7 +40,7 @@
                             <div class="slider-text text-center">
                                 <h3 class="slide-title"><span>Bitcoin</span> Exchange <br/>You can <span>Trust</span> </h3>
                                 <p>
-                                    <a href="pricing.html" class="slider btn btn-primary">our prices</a>
+                                    <a href="{% url 'main:pricing' %}" class="slider btn btn-primary">our prices</a>
                                 </p>
                             </div>
                         </div>
@@ -140,7 +140,7 @@
                             <p>We are here because we are passionate about open, transparent markets and aim to be a major driving force in widespread adoption, we are the first and the best in cryptocurrency. </p>
                         </div>
                     </div>
-                    <a class="btn btn-primary" href="about.html">Read More</a>
+                    <a class="btn btn-primary" href="{% url 'main:about' %}">Read More</a>
                 </div>
                 <!-- Content Ends -->
             </div>
@@ -701,112 +701,7 @@
         </div>
     </section>
     <!-- Call To Action Section Ends -->
-    <!-- Footer Starts -->
-    <footer class="footer">
-        <!-- Footer Top Area Starts -->
-        <div class="top-footer">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Widget Starts -->
-                    <div class="col-sm-4 col-md-2">
-                        <h4>Our Company</h4>
-                        <div class="menu">
-                            <ul>
-                                <li><a href="index-2.html">Home</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="blog-right-sidebar.html">Blog</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Footer Widget Ends -->
-                    <!-- Footer Widget Starts -->
-                    <div class="col-sm-4 col-md-2">
-                        <h4>Help & Support</h4>
-                        <div class="menu">
-                            <ul>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="terms-of-services.html">Terms of Services</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="register.html">Register</a></li>
-                                <li><a href="login.html">Login</a></li>
-                                <li><a href="coming-soon.html">Coming Soon</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- Footer Widget Ends -->
-                    <!-- Footer Widget Starts -->
-                    <div class="col-sm-4 col-md-3">
-                        <h4>Contact Us </h4>
-                        <div class="contacts">
-                            <div>
-                                <span>support@Cryptolandtradingservices.com</span>
-                            </div>
-                            <div>
-                                <span>00216 21 184 010</span>
-                            </div>
-                            <div>
-                                <span>London, England</span>
-                            </div>
-                            <div>
-                                <span>mon-sat 08am &#x21FE; 05pm</span>
-                            </div>
-                        </div>
-                        <!-- Social Media Profiles Starts -->
-                        <div class="social-footer">
-                            <ul>
-                                <li><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                        <!-- Social Media Profiles Ends -->
-                    </div>
-                    <!-- Footer Widget Ends -->
-                    <!-- Footer Widget Starts -->
-                    <div class="col-sm-12 col-md-5">
-                        <!-- Facts Starts -->
-                        <div class="facts-footer">
-                            <div>
-                                <h5>$198.76B</h5>
-                                <span>Market cap</span>
-                            </div>
-                            <div>
-                                <h5>243K</h5>
-                                <span>daily transactions</span>
-                            </div>
-                            <div>
-                                <h5>369K</h5>
-                                <span>active accounts</span>
-                            </div>
-                            <div>
-                                <h5>127</h5>
-                                <span>supported countries</span>
-                            </div>
-                        </div>
-                        <!-- Facts Ends -->
-                        <hr>
-                        <!-- Supported Payment Cards Logo Starts -->
-                        <div class="payment-logos">
-                            <h4 class="payment-title">supported payment methods</h4>
-                            <img src="/static/images/icons/payment/american-express.png" alt="american-express">
-                            <img src="/static/images/icons/payment/mastercard.png" alt="mastercard">
-                            <img src="/static/images/icons/payment/visa.png" alt="visa">
-                            <img src="/static/images/icons/payment/paypal.png" alt="paypal">
-                            <img class="last" src="/static/images/icons/payment/maestro.png" alt="maestro">
-                        </div>
-                        <!-- Supported Payment Cards Logo Ends -->
-                    </div>
-                    <!-- Footer Widget Ends -->
-                </div>
-            </div>
-        </div>
-        <!-- Footer Top Area Ends -->
-    </footer>
-    <!-- Footer Ends -->
+    {% include "home/footer.html" %}
     <!-- Back To Top Starts  -->
     <a href="#" id="back-to-top" class="back-to-top fa fa-arrow-up"></a>
     <!-- Back To Top Ends  -->  
