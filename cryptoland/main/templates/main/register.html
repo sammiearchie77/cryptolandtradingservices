@@ -67,8 +67,8 @@
         <div class="container-fluid user-auth">
 			<div class="hidden-xs col-sm-4 col-md-4 col-lg-4">
 				<!-- Logo Starts -->
-				<a class="logo" href="index-2.html">
-					<img id="logo-user" class="img-responsive" src="images/logo-dark.png" alt="logo">
+				<a class="logo" href="{% url 'main:index' %}">
+					<img id="logo-user" class="img-responsive" src="/static/images/logos/cryptoland.png" alt="logo">
 				</a>
 				<!-- Logo Ends -->
 				<!-- Slider Starts -->
@@ -119,8 +119,8 @@
 			</div>
 			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
 				<!-- Logo Starts -->
-				<a class="visible-xs" href="index-2.html">
-					<img id="logo" class="img-responsive mobile-logo" src="images/logo-dark.png" alt="logo">
+				<a class="visible-xs" href="{% url 'main:index' %}">
+					<img id="kpos" class="img-responsive mobile-logo" src="/static/images/logos/cryptoland.png" alt="logo">
 				</a>
 				<!-- Logo Ends -->
 				<div class="form-container">
@@ -129,10 +129,17 @@
 						<div class="row text-center">
 							<h2 class="title-head hidden-xs">get <span>started</span></h2>
 							 <p class="info-form">Open account for free and start trading Bitcoins now!</p>
+							 
 						</div>
 						<!-- Section Title Ends -->
 						<!-- Form Starts -->
 						<form method="POST">
+							 <ul>
+								 <li>Your password can't be too similar to your other personal information.</li>
+								 <li>Your password must contain at least 8 characters.</li>
+								 <li>Your password can't be a commonly used password.</li>
+								 <li>Your password can't be entirely numeric.</li>
+							 </ul>
 							{% csrf_token %}
 							<!-- Input Field Starts -->
 							<div class="form-group">
