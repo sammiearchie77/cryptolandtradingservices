@@ -279,7 +279,7 @@ def create_profile(request):
             # filter by UUID and match the user that has been created from the registration
             profile_user = Profile.objects.filter(user_id=user.user_id)
             print(profile_picture)
-
+            time.sleep(40)
             # update the users profile with the required form data
             profile_user.update(
                 first_name = first_name,
