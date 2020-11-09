@@ -143,7 +143,22 @@ def fund_account(request):
 
 # transactions view 
 def transactions(request):
-    return render(request, 'main/trading-history.html')
+    user = request.user
+    # dashboard info from database
+    balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    signals_amount = Signals.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    withdraw = Withdraw.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    invested = InvestedAmount.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    btc_balance = BTCbalance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    daily_investments = DailyInvestments.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    transaction_details = Transaction.objects.filter(user=user)
+
+    context = {
+        'balance': balance, 
+        'invested': invested,
+        'withdraw': withdraw
+    }
+    return render(request, 'main/transactions.html', context)
 
 # withdrawal fn
 from django.contrib.auth.hashers import check_password
@@ -278,7 +293,7 @@ def create_profile(request):
             user = request.user
             # filter by UUID and match the user that has been created from the registration
             profile_user = Profile.objects.filter(user_id=user.user_id)
-            
+
             # update the users profile with the required form data
             profile_user.update(
                 first_name = first_name,
@@ -315,6 +330,18 @@ from django.shortcuts import get_object_or_404
 
 def edit_profile(request):
     user = request.user
+    # dashboard info from database
+    balance = Balance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    signals_amount = Signals.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    withdraw = Withdraw.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    invested = InvestedAmount.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    btc_balance = BTCbalance.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    daily_investments = DailyInvestments.objects.filter(user=user).aggregate(amount=Sum('amount'))
+    transaction_details = Transaction.objects.filter(user=user)
+
+    context = {
+        
+    }
     instance = get_object_or_404(Profile, user=user)
     print(user)
     if request.method == 'POST':
@@ -324,7 +351,10 @@ def edit_profile(request):
     else:
         form = ProfileForm(instance=instance)     
     context = {
-        'form': form
+        'form': form,
+        'balance': balance, 
+        'invested': invested,
+        'withdraw': withdraw, 
     }
     return render(request, 'main/edit-profile.html', context)
 # logout route
