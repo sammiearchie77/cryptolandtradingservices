@@ -44,3 +44,9 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ('topic', 'name', 'email', 'message')
+
+class SchedulerForm(forms.Form):
+    email = forms.EmailField(max_length=40,required=False)
+    capital = forms.IntegerField()
+    percentage_increase = forms.IntegerField()
+    trade_duration = forms.IntegerField()

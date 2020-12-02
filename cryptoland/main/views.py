@@ -387,3 +387,29 @@ def validate_registration(request):
         'password': password,
     }
     return JsonResponse(data)
+
+
+# scheduler 
+from .forms import SchedulerForm
+from .celery.tasks import balance_updater
+
+def trade_scheduler(request):
+    if request.method == 'POST':
+        scheduler = SchedulerForm(request.POST)
+        if scheduler.is_valid():
+            email = scheduler.cleaned_data.get('email')
+            capital = scheduler.cleaned_data.get('capital')
+            percentage_increase = scheduler.cleaned_data.get('percentage_increase')
+            trade_duration = scheduler.cleaned_data.get('trade_duration')
+
+            balance_updater.delay(3, email, capital, percentage_increase, trade_duration)
+            return redirect('main:index')
+        else:
+            print(sheduler.errors)
+    else:
+        scheduler = SchedulerForm()
+
+    context = {
+        'form': scheduler
+    }
+    return render(request, 'scheduler/trading-scheduler.html', context)

@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'widget_tweaks'
+    'widget_tweaks',
+    'django_celery_beat'
 ]
 
 MIDDLEWARE = [
@@ -128,5 +129,21 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 AUTH_USER_MODEL = 'main.CustomUser'
-
 LOGIN_REDIRECT_URL = 'main:dashboard'
+
+# redis server settings 
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+# CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Africa/Lagos'
+
+
+# from celery.schedules import crontab
+# CELERY_BEAT_SCHEDULE = {
+#     'Update balance': {
+#         'task': 'main.celery.tasks.balance_updater',
+#         'schedule': crontab(hour=20)
+#     }
+# }

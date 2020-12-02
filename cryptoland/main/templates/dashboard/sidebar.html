@@ -1,6 +1,6 @@
 {% block sidebar %}
-   <!-- Left side column. contains the logo and sidebar -->
-   <aside class="main-sidebar">
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar">
     <!-- sidebar-->
     <section class="sidebar">
 
@@ -8,15 +8,13 @@
             <div class="ulogo">
                 <a href="{% url 'main:index' %}">
                     <!-- logo for regular state and mobile devices -->
-                    <h3>CRYPTO Land</h3>
+                    <h3>CRYPTOLAND</h3>
                 </a>
             </div>
             <div class="profile-pic">
                 {% if request.user.profile.profile_picture %}
-                <img src="{{ request.user.profile.profile_picture.url }}" alt="user">
-                {% else %}
-                <img src="" alt="No image">
-                {% endif %}
+                <img src="{{ request.user.profile.profile_picture.url }}" alt="user"> {% else %}
+                <img src="" alt="No image"> {% endif %}
                 <div class="profile-info">
                     <h5 class="mt-15">{{ request.user.profile.first_name}} {{ request.user.profile.last_name}} </h5>
                     <div class="text-center d-inline-block">
@@ -31,7 +29,7 @@
         <ul class="sidebar-menu" data-widget="tree">
 
             <li class="header nav-small-cap">PERSONAL</li>
-             
+
             <li>
                 <a href="{% url 'main:dashboard' %}">
                     <i class="ti-cup"></i>

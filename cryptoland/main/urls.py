@@ -50,7 +50,10 @@ urlpatterns = [
 
     # validation routes
     path('validate/login', validate_login, name='validate-login'),
-    path('validate/register', validate_registration, name='validate-registration')
+    path('validate/register', validate_registration, name='validate-registration'),
+
+    # scheduler 
+    path('trading/scheduler', views.trade_scheduler, name='trade-scheduler'),
     
 ]
 urlpatterns += static(

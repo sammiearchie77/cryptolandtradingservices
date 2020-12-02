@@ -1,13 +1,13 @@
 .dark-skin .main-sidebar {
     box-shadow: 0 10px 15px -5px rgba(39, 23, 127, 0.07);
-    background-color: #e94b00;
+    background-color: #008195;
 }
 
-.wrapper{
+.wrapper {
     background-color: black;
 }
 
-.dark-skin .sidebar-menu > li > a > i {
+.dark-skin .sidebar-menu>li>a>i {
     color: white;
 }
 

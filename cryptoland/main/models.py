@@ -185,3 +185,22 @@ class Transaction(models.Model):
     transaction_id = models.UUIDField(default=uuid.uuid4())
     amount = models.IntegerField()
     type = models.CharField(max_length=30, choices=types)
+
+class LatestTransactions(models.Model):
+    preference = (
+        ('High' ,'High'),
+        ('Medium', 'Medium'),
+        ('Low' ,'Low'),
+    )
+
+    status = (
+        ('Confirmed', 'Confirmed'),
+        ('Unconfirmed', 'Unconfirmed'),
+        ('Canceled', 'Canceled'),
+    )
+
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    btc = models.CharField(max_length=30, default='0.00')
+    time = models.DateTimeField(auto_now=True)
+    miner_preference = models.CharField(max_length=20, choices=preference)
+    status = models.CharField(max_length=18,default='', choices=status )
