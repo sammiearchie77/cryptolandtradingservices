@@ -1,4 +1,4 @@
-source ~/Documents/web_projects/venv/bin/activate && cd cryptoland && python manage.py runserver
+source ~/Documents/web_projects/venv/bin/activate && cd cryptoland && python manage.py runserver 127.0.0.1:4500
 python manage.py makemigrations && python manage.py migrate
 
 #copy static file script
