@@ -1,5 +1,4 @@
-﻿{% extends "dashboard/dashboard-base.html" %}
-{% block dashboard %}
+﻿{% extends "dashboard/dashboard-base.html" %} {% block dashboard %}
 <div class="wrapper">
 
     <header class="main-header">
@@ -85,12 +84,11 @@
                                         <span class="fab fa-bitcoin font-size-50"></span>
                                     </div>
                                     <div class="col-9 py-4">
-                                        <h4>DEPOSIT WITH BITCOIN</h4> 
+                                        <h4>DEPOSIT WITH BITCOIN</h4>
                                     </div>
                                 </div>
                                 <a href="#btc-address-collapse" class="mx-5" data-toggle="collapse" aria-expanded="false" aria-controls='btc-address-collapse'>
-                                    <i class="fas fa-arrow-down"></i>    
-                                    Expand
+                                    <i class="fas fa-arrow-down"></i> Expand
                                 </a>
                             </div>
                             <div class="card-body bg-primary collapse text-center" id="btc-address-collapse">
@@ -106,35 +104,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5">
-                        <div class="card">
-                            <div class="box-body wizard-content">
-                                <div class="row text-center">
-                                    <div class="col-3">
-                                        <span class="fab fa-paypal font-size-50"></span>
-                                    </div>
-                                    <div class="col-9 py-4">
-                                        <h4>DEPOSIT WITH PAYPAL</h4> 
-                                    </div>
-                                </div>
-                                <a href="#paypal-pay-collapse" class="mx-5" data-toggle="collapse" aria-expanded="false" aria-controls='paypal-pay-collapse'>
-                                    <i class="fas fa-arrow-down"></i>    
-                                    Expand
-                                </a>
-                            </div>
-                            <div class="card-body bg-primary collapse text-center" id="paypal-pay-collapse">
-                                <h4>Copy and Pay To the PayPal Account below</h4>
-                                <input type="text" value="paypal.me/cryptolandtrading" id="paypal-input">
-                                <button class="btn btc-copy" data-clipboard-target='#paypal-input'>
-                                    <i class="fas fa-clipboard"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="col-md-1"></div>
                 </div>
-            </div>
         </div>
     </div>
+</div>
 
-{% endblock  %}
+{% endblock %}
