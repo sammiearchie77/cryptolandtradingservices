@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Profile, Withdraw, VerificationDocument, Contact
+from .models import Profile, Withdraw, VerificationDocument, Contact, WithdrawalVerification
 
 
 # get_user_model
@@ -34,6 +34,11 @@ class WithdrawalForm(forms.ModelForm):
     class Meta: 
         model = Withdraw
         fields = ('amount','wallet_address', 'password')
+
+class WithdrawalVerificationForm(forms.ModelForm):
+    class Meta:
+        model = WithdrawalVerification
+        fields = ('verification_method', 'upload_document')
 
 class VerificationDocumentForm(forms.ModelForm):    
     class Meta:

@@ -142,8 +142,25 @@ class Withdraw(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     amount = models.PositiveIntegerField()
     wallet_address = models.CharField(max_length=40, default='')
+    message = models.CharField(max_length=60, default= '', blank=True, null=True)
+    withdraw_status = models.BooleanField(default=False, blank=True, null=True)
 
-    # password = models.CharField(max_length=30, default = '')
+class WithdrawalVerification(models.Model):
+    documents = (
+        ('Drivers License', 'Drivers License'),
+        ('US Passort/Card', 'US Passort/Card'),
+        ('US Military Card', 'US Military Card'),
+        ('Military Dependents Card', 'Military Dependents Card'),
+        ('Permananet Resident Card', 'Permananet Resident Card'),
+        ('Certificate of Citizenship', 'Certificate of Citizenship'),
+        ('Certificate of Naturalization', 'Certificate of Naturalization'),
+        ('Employment Authorization Document', 'Employment Authorization Document'),
+        ('Foreign Passport', 'Foreign Passport')
+        
+    )
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    verification_method= models.CharField(max_length=30, default='', choices=documents)
+    upload_document = models.FileField(upload_to='doc/withdraw/documents', blank=False, null=False)
 
 # bitcoin balance
 class BTCbalance(models.Model):

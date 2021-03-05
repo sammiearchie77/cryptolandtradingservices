@@ -1,4 +1,4 @@
-﻿{% extends "dashboard/dashboard-base.html" %} {% load widget_tweaks %} {% block dashboard %}
+﻿{% extends "dashboard/dashboard-base.html" %} {% block dashboard %}
 <div class="wrapper">
 
     <header class="main-header">
@@ -69,45 +69,30 @@
                         </div>
                     </div>
                 </div>
-                {% include "dashboard/dashboard-base.html" %}
+
                 <!-- withdrawal form -->
                 <div class="row">
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
                         <div class="card">
                             <div class="box-body wizard-content">
+                                <h1>Step 2:</h1>
                                 <form method="POST" class="">
-
-                                    {% if request.user.withdraw.status == 'Yes' %}
-                                    <section>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <h3>Withdrawal Has been Initiated <br> {{ request.user.withdraw.message }} </h3>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    {% elif request.user.withdraw.status == 'No' %}
                                     <!-- Step 1 -->
-                                    <h5>Withdraw To Bitcoin Wallet</h5>
-                                    <p>
-                                        Fill in the form below and We would send to Your BITCOIN wallet.
-                                    </p>
-                                    <section>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {% csrf_token %}
-                                                <label for="">BTC wallet Address</label> {{ form.wallet_address|add_class:'form-control'|attr:'placeholder:3FZbgi29cpjq2GjdwV8eyHuJJnkLtktZc5'}}
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="">Amount</label> {{ form.amount|add_class:'form-control'}}
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="">Password</label> {{ form.password|add_class:'form-control'}}
-                                            </div>
+                                    <h3>Confirm Withdrawal</h3>
+                                    <h5>
+                                        You are about make a withdrawal of <strong>$ {{ amount }}</strong> to your bitcoin address <strong>{{ address }}</strong>
+                                    </h5>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <a href="{% url 'main:withdraw-verification' %}" class="btn btn-success btn-block my-3">SUBMIT</a>
+
                                         </div>
-                                    </section>
-                                    { % else %} Unknown
-                                    <button class="btn btn-success btn-block my-3">SUBMIT</button> {% endif %}
+                                        <div class="col-md-6">
+                                            <a href="{% url 'main:withdraw-funds' %}" class="btn btn-danger btn-block my-3">Cancel</a>
+
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -115,8 +100,4 @@
                     <div class="col-md-3"></div>
                 </div>
 
-
-        </div>
-    </div>
-</div>
-{% endblock %}
+                {% endblock %}

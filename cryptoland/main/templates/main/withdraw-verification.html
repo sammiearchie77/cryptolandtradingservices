@@ -28,7 +28,7 @@
                 </h3>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="breadcrumb-item active">Withdraw</li>
+                    <li class="breadcrumb-item active">Withdraw Verification</li>
                 </ol>
             </div>
 
@@ -69,45 +69,32 @@
                         </div>
                     </div>
                 </div>
-                {% include "dashboard/dashboard-base.html" %}
+
                 <!-- withdrawal form -->
                 <div class="row">
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
                         <div class="card">
                             <div class="box-body wizard-content">
-                                <form method="POST" class="">
-
-                                    {% if request.user.withdraw.status == 'Yes' %}
-                                    <section>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <h3>Withdrawal Has been Initiated <br> {{ request.user.withdraw.message }} </h3>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    {% elif request.user.withdraw.status == 'No' %}
+                                <h1>Step 3:</h1>
+                                <form method="POST" class="" enctype="multipart/form-data">
+                                    {% csrf_token %}
                                     <!-- Step 1 -->
-                                    <h5>Withdraw To Bitcoin Wallet</h5>
+                                    <h5>Submit Document to verify your Identity</h5>
                                     <p>
-                                        Fill in the form below and We would send to Your BITCOIN wallet.
+                                        Fill in the form below to withdraw funds
                                     </p>
                                     <section>
                                         <div class="row">
                                             <div class="col-md-12">
-                                                {% csrf_token %}
-                                                <label for="">BTC wallet Address</label> {{ form.wallet_address|add_class:'form-control'|attr:'placeholder:3FZbgi29cpjq2GjdwV8eyHuJJnkLtktZc5'}}
+                                                <label for="">Document Type</label> {{ form.verification_method|add_class:'form-control' }}
                                             </div>
-                                            <div class="col-md-6">
-                                                <label for="">Amount</label> {{ form.amount|add_class:'form-control'}}
-                                            </div>
-                                            <div class="col-md-6">
-                                                <label for="">Password</label> {{ form.password|add_class:'form-control'}}
+                                            <div class="col-md-12">
+                                                <label for="">Upload Document</label> {{ form.upload_document|add_class:'form-control'}}
                                             </div>
                                         </div>
                                     </section>
-                                    { % else %} Unknown
-                                    <button class="btn btn-success btn-block my-3">SUBMIT</button> {% endif %}
+                                    <button class="btn btn-success btn-block my-3">SUBMIT</button>
                                 </form>
                             </div>
                         </div>
@@ -116,7 +103,5 @@
                 </div>
 
 
-        </div>
-    </div>
-</div>
-{% endblock %}
+
+                {% endblock %}

@@ -7,10 +7,10 @@ from django.contrib.auth import get_user_model
 
 from django.contrib.auth.decorators import login_required
 
-from .forms import RegistrationForm, ProfileForm, WithdrawalForm, VerificationDocumentForm, ContactForm
+from .forms import RegistrationForm, ProfileForm, WithdrawalForm, VerificationDocumentForm, ContactForm, WithdrawalVerificationForm
 
 # models
-from .models import Balance, Signals, InvestedAmount, BTCbalance, Profile, DailyInvestments, VerificationDocument
+from .models import Balance, Signals, InvestedAmount, BTCbalance, Profile, DailyInvestments, VerificationDocument, WithdrawalVerification
 from .models import CustomUser, Transaction, Withdraw
 from django.db.models import Sum
 
@@ -189,7 +189,8 @@ def withdraw_funds(request):
                     amount=amount, 
                     wallet_address=wallet_address
                 )
-                return redirect('main:dashboard')
+                messages.success(request, 'Withdraw Process Initiated')
+                return redirect('main:confirm-withdrawal')
             else:
                 print('problem with matching password')
         else: 
@@ -203,6 +204,55 @@ def withdraw_funds(request):
     }
 
     return render(request, 'main/withdraw-funds.html', context )
+
+# confirm withdrawl 
+def confirm_withdrawal(request):
+    user = request.user
+
+    try:            
+        # query withdrawal
+        withdraw_object = Withdraw.objects.get(user=user)
+        # get withdrawal amount 
+        withdrawal_amount = withdraw_object.amount
+        # get withdrawal btc address
+        btc_address = withdraw_object.wallet_address
+
+        context = {
+            'amount': withdrawal_amount,
+            'address': btc_address,
+        }
+
+    except:
+        return redirect('main:withdraw-funds')
+        # context = {
+        #     'amount': 0,
+        #     'address': 'Invalid'
+        # }
+
+    return render(request, 'main/confirm-withdrawal.html', context)
+
+# withdraw verification
+def withdraw_verification(request):    
+    if request.method == 'POST':
+        form = WithdrawalVerificationForm(request.POST, files=request.FILES)
+        if form.is_valid():
+            user = request.user
+            verification_method = form.cleaned_data.get('verification_method')
+            upload_document = form.cleaned_data.get('upload_document')
+            WithdrawalVerification.objects.create(
+                user=user,
+                verification_method=verification_method,
+                upload_document=upload_document
+            )
+            return redirect('main:dashboard')
+        else:
+            form.errors()
+    else:
+        form = WithdrawalVerificationForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'main/withdraw-verification.html', context)
 
 # document verification
 from django.contrib.auth import get_user_model
