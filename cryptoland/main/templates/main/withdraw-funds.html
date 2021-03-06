@@ -75,18 +75,21 @@
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
                         <div class="card">
+                            {% if request.user.withdraw.amount %}
+                            <div class="box-body wizard-content">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3>Withdrawal Has been Initiated <br> {{ request.user.withdraw.message }} </h3>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                            {% else %}
                             <div class="box-body wizard-content">
                                 <form method="POST" class="">
 
-                                    {% if request.user.withdraw.status == 'Yes' %}
-                                    <section>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <h3>Withdrawal Has been Initiated <br> {{ request.user.withdraw.message }} </h3>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    {% elif request.user.withdraw.status == 'No' %}
+
                                     <!-- Step 1 -->
                                     <h5>Withdraw To Bitcoin Wallet</h5>
                                     <p>
@@ -106,10 +109,11 @@
                                             </div>
                                         </div>
                                     </section>
-                                    { % else %} Unknown
-                                    <button class="btn btn-success btn-block my-3">SUBMIT</button> {% endif %}
+
+                                    <button class="btn btn-success btn-block my-3">SUBMIT</button>
                                 </form>
                             </div>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="col-md-3"></div>

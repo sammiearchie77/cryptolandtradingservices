@@ -53,3 +53,55 @@ server {
         proxy_pass http://unix:/home/trader/cryptoland.sock;
     }
 }
+
+
+{% comment %} buggy withdrawal form functionalitys  {% endcomment %}
+
+
+{% if request.user.withdraw.withdraw_status == 'Yes' %}
+                            <div class="box-body wizard-content">
+                                <section>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h3>Withdrawal Has been Initiated <br> {{ request.user.withdraw.message }} </h3>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+                            {% elif request.user.withdraw.withdraw_status == 'No' %}
+
+                            <div class="box-body wizard-content">
+                                <form method="POST" class="">
+
+
+                                    <!-- Step 1 -->
+                                    <h5>Withdraw To Bitcoin Wallet</h5>
+                                    <p>
+                                        Fill in the form below and We would send to Your BITCOIN wallet.
+                                    </p>
+                                    <section>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                {% csrf_token %}
+                                                <label for="">BTC wallet Address</label> {{ form.wallet_address|add_class:'form-control'|attr:'placeholder:3FZbgi29cpjq2GjdwV8eyHuJJnkLtktZc5'}}
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="">Amount</label> {{ form.amount|add_class:'form-control'}}
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="">Password</label> {{ form.password|add_class:'form-control'}}
+                                            </div>
+                                        </div>
+                                    </section>
+
+                                    <button class="btn btn-success btn-block my-3">SUBMIT</button>
+                                </form>
+                            </div>
+                            { % else %}
+                            <div class="box-content wizard-content">
+                                <h3>
+                                    Unknown
+                                </h3>
+                            </div>
+                            {% endif %}
