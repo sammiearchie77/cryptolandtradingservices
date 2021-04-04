@@ -82,6 +82,11 @@ plans = (
     ('Platinum', 'Platinum')
 )
 class Profile(models.Model):
+    currency = (
+        ('Dollars($)', 'Dollars($)'),
+        ('Pounds()', 'Pounds()'),
+        ('Euros()', 'Euros()'),
+    )
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
     first_name = models.CharField(max_length=23, default='', blank=True)
     last_name = models.CharField(max_length=23, default='', blank=True)
@@ -93,6 +98,7 @@ class Profile(models.Model):
     profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
     country = CountryField(blank_label='(select country)', blank=True, null=True)
     select_plan = models.CharField(max_length=40, choices=plans)
+    select_currency = models.CharField(max_length=200, choices=currency, blank=True, null=True)
     def __str__(self):
         return self.first_name
         
