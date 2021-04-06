@@ -83,9 +83,9 @@ plans = (
 )
 class Profile(models.Model):
     currency = (
-        ('Dollars($)', 'Dollars($)'),
-        ('Pounds()', 'Pounds()'),
-        ('Euros()', 'Euros()'),
+        ('Dollars', 'Dollars'),
+        ('Pounds', 'Pounds'),
+        ('Euros', 'Euros'),
     )
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='profile')
     first_name = models.CharField(max_length=23, default='', blank=True)
