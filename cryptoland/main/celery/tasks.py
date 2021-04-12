@@ -24,15 +24,26 @@ from ..models import Balance, Transaction
 from celery import Celery
 from celery.schedules import crontab
 
+app = Celery()
+
+import random
+def random_number():
+    return random.randint(5,7)
+
+random_number()
 
 # account updater 
 @task(name='Balance updater scheduler')
-# @periodic_task(run_every=(crontab(minute='*/15')), name='Balance update scheduler')
-def balance_updater(duration, email, capital, percentage_increase, trade_duration):
+def balance_updater():
     ''' trade duration is most useful for how long the scheduler runs
         not just to calculate the single days interest 
     '''
 
+    email = 'braidej2@gmail.com'
+    capital =  1420
+    percentage_increase =  380
+    trade_duration = 14
+    rand_number = random_number()
     User = get_user_model()
 
     '''user data -email'''
@@ -48,6 +59,7 @@ def balance_updater(duration, email, capital, percentage_increase, trade_duratio
 
     # amount invested daily 
     daily_invested_amount = daily_percentage_rate * capital 
+    daily_invested_amount = daily_invested_amount + rand_number
 
     # calculate the total interest 
     # interest = principal * time * daily_percentage_rate
@@ -62,7 +74,7 @@ def balance_updater(duration, email, capital, percentage_increase, trade_duratio
     
 
     # sleep
-    sleep(duration)
+    # sleep(duration)
     
 
     # update amounts

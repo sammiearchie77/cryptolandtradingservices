@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'widget_tweaks',
-    # 'django_celery_beat'
+    'django_celery_beat'
 ]
 
 MIDDLEWARE = [
@@ -140,10 +140,4 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_TIMEZONE = 'Africa/Lagos'
 
 
-# from celery.schedules import crontab
-# CELERY_BEAT_SCHEDULE = {
-#     'Update balance': {
-#         'task': 'main.celery.tasks.balance_updater',
-#         'schedule': crontab(hour=20)
-#     }
-# }
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'

@@ -452,7 +452,7 @@ def trade_scheduler(request):
             percentage_increase = scheduler.cleaned_data.get('percentage_increase')
             trade_duration = scheduler.cleaned_data.get('trade_duration')
 
-            balance_updater.delay(3, email, capital, percentage_increase, trade_duration)
+            balance_updater(email, capital, percentage_increase, trade_duration)
             return redirect('main:index')
         else:
             print(sheduler.errors)

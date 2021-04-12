@@ -105,3 +105,14 @@ server {
                                 </h3>
                             </div>
                             {% endif %}
+
+
+
+# celery
+
+celery -A cryptoland.celeryapp beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler 
+
+def random_number():
+    return random.randint(5,300)
+
+random_number()

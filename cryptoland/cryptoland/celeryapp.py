@@ -24,13 +24,3 @@ app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 def debug_task(self):
     # print(f'request: {self.request}')
     print('REQUEST: {0!r}'.format(self.request))
-
-
-# # celery beat 
-# app.conf.beat_schedule  = {
-#     'run-me-ever-ten-seconds':{
-#         # 'task': 'celeryapp.check_scheduler',
-#         'task': 'celery.tasks.balance_updater',
-#         'schedule': 10.0,
-#     }
-# }

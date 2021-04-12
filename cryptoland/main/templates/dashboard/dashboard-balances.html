@@ -29,11 +29,17 @@
                     <h4>Total Invested</h4>
                 </div>
                 <div class="box-body p-10">
-                    {% if invested.amount %}
+                {% if request.user.profile.select_currency == 'Dollars' %}
                     <h1 class="text-center"><small>$</small>{{ invested.amount }}</h1>
+                    {% elif request.user.profile.select_currency == 'Pounds' %}
+                    <h1 class="text-center"><small>£</small>{{ invested.amount }}</h1>
+
+                    {% elif request.user.profile.select_currency == 'Euros' %}
+                    <h1 class="text-center"><small>€</small>{{ invested.amount }}</h1>
                     {% else %}
-                    <h1 class="text-center"><small>$</small>0</h1>
+                    <h1 class="text-center"><small>$</small>0 </h1>
                     {% endif %}
+                    
                 </div>
             </div>
         </div>
@@ -45,11 +51,18 @@
                     <h4>Available Withdrawal</h4>
                 </div>
                 <div class="box-body p-10">
-                    {% if withdraw.amount %}
+                {% if request.user.profile.select_currency == 'Dollars' %}
                     <h1 class="text-center"><small>$</small>{{ withdraw.amount }}</h1>
+                    {% elif request.user.profile.select_currency == 'Pounds' %}
+                    <h1 class="text-center"><small>£</small>{{ withdraw.amount }}</h1>
+
+                    {% elif request.user.profile.select_currency == 'Euros' %}
+                    <h1 class="text-center"><small>€</small>{{ withdraw.amount }}</h1>
                     {% else %}
-                    <h1 class="text-center"><small>$</small>0</h1>
+                    <h1 class="text-center"><small>$</small>0 </h1>
                     {% endif %}
+                    
+                    
                 </div>
             </div>
 
